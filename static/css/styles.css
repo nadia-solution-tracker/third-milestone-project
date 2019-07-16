@@ -15,11 +15,21 @@
     background-color:#CD9B1D;
 }
 
+#heading{ 
+    background: url('https://ederphoto.com/wp-content/gallery/Food/San-Diego-Restaurant-Photography-04.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width:100%; 
+    height:20vw;/* https://help.issuu.com/hc/en-us/articles/115000631608-Resizing-Embeds-To-Be-Responsive*/
+}
 
 /*-------------Content-*/
 .card-body-content,
 .content,
 .card-action,
+.card-header h4,
 #recipe_name{
   font-family: 'Mountains of Christmas', cursive;
   font-size: 30px;
@@ -40,7 +50,8 @@
 .card-block{
     padding:18px;
 }
-.btn-primary {
+.btn-primary,
+.btn-info{
     color: #fff;
     background-color: #FE7F9C;
     border-color: #FE7F9C;
