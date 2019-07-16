@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap');
 
+/*------------Navigation--*/
 .welcome-line,
 #navbarResponsive{
   font-family: 'Mountains of Christmas', cursive;
@@ -14,14 +15,31 @@
     background-color:#CD9B1D;
 }
 
-.card-body-content{
+
+/*-------------Content-*/
+.card-body-content,
+.content,
+.card-action,
+#recipe_name{
   font-family: 'Mountains of Christmas', cursive;
   font-size: 30px;
+  
+}
+.card-body-content{
   text-shadow: 4px 4px 4px #aaa;
   background-color:#80c9c0;
   padding-top:20px;
 }
 
+.content{
+    color:#80c9c0;
+    text-align:center;
+    font-weight: bolder;
+}
+
+.card-block{
+    padding:18px;
+}
 .btn-primary {
     color: #fff;
     background-color: #FE7F9C;
@@ -34,7 +52,17 @@
     border-color: #285e8e; /*set the color you want here*/
 }
 
+.image_style{
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    width:300px; 
+    height:200px;
+    padding-top:15px;
+}
 
+
+/*-------------Footer-*/
 footer{
    background-color:#80c9c0;
 }
@@ -60,6 +88,8 @@ footer{
     -o-transition: all,0.35s ease-in-out;
 }
 
+
+/*-------------Media Queries-*/
 @media screen and (max-width: 768px){
       .navbar-dark .navbar-brand{
       font-family: 'Mountains of Christmas', cursive;
@@ -76,5 +106,30 @@ footer{
     line-height: 4;
     }
     
-    
+    .image_style{
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    width:300px; 
+    height:300px;
+    padding-top:15px;
 }
+
+}
+
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1){
+      
+       .image_style{
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+        width:150px; 
+        height:300px;
+        padding-top:15px;
+  }
+      
+  }
