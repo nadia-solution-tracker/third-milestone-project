@@ -15,21 +15,28 @@
                                 <div class="form-group row">
                                     <label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="user_name" placeholder="Username" required="required">
+                                        <input type="text" class="form-control mainforminput" name="user_name" placeholder="Username" required="required">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                                        <input type="password" class="form-control mainforminput" name="password" placeholder="Password" required="required">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="country_of_origin" class="col-md-4 col-form-label text-md-right">Country of Origin</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control mainforminput" name="country_of_origin" placeholder="Country of Origin" required="required">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="email" placeholder="E-mail Address" required="required"><br/>
+                                        <input type="text" class="form-control mainforminput" name="email" placeholder="E-mail Address" required="required"><br/>
                                         {% with messages = get_flashed_messages(with_categories=true) %}
                                             {% if messages %}
                                                 {% for category, message in messages %}

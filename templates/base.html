@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to Kitchen Station!!!</title>
+    <!--Materialise CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="{{url_for('static',filename='css/small-business.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" type="text/css"/>
     <!--Stylesheet for fonts-->
 	  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+	  <!--Stylesheet for icons-->
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 </head>
 <body>
@@ -39,7 +43,7 @@
                 </li>
               {% else %}
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Add Recipe</a>
+                    <a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">My Recipes</a>
@@ -86,5 +90,36 @@
     <script src="static/vendor/jquery/jquery.min.js"></script>
     <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename= 'js/clean-blog.min.js') }}"></script>
+    <!--Materialise JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('select').material_select();
+        $("select[required]").css({
+            display: 'inline',
+            position: 'absolute',
+            float: 'left',
+            padding: 0,
+            margin: 0,
+            border: '1px solid rgba(255,255,255,0)',
+            height: 0, 
+            width: 0,
+            top: '2em',
+            left: '3em'
+        });
+      });
+      //code for timepicker
+      //https://github.com/chingyawhao/materialize-clockpicker
+      $('.timepicker').pickatime({
+          default: 'now',
+          twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
+          donetext: 'OK',
+          autoclose: false,
+          vibrate: true // vibrate the device when dragging clock hand
+      });
+      $(document).on("mousedown", ".timepicker", function(event){
+          event.preventDefault();
+      });
+    </script>
 </body>
 </html>

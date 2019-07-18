@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--Header-->
+<header id="heading"></header>
+    <br/>
+    <main class="my-form">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                    <div class="card">
+                         <div class="card-header"><h4 class="text-center">ADD RECIPE</h4></div>
+                        <div class="card-body">
+                            <form method="POST" action="{{ url_for('insert_recipe') }}">
+                                <!--Recipe Name-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">restaurant</i>
+                                        <input class="mainforminput" id="recipe_name" name="recipe_name" type="text" class="validate" placeholder="Recipe_Name" required>
+                                        <label for="recipe_name">Recipe Name</label>
+                                    </div>
+                                </div>
+
+                                <!--Short Description-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">short_text</i>
+                                        <input class="mainforminput" id="short_description" name="short_description" type="text" class="validate" placeholder="Short Description" required>
+                                        <label for="short_description">Short Description</label>
+                                    </div>
+                                </div>
+                                
+                                <!--Authors Country of Origin-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">short_text</i>
+                                        {% for user in users %}{% if user.user_name == username %}
+                                            <input class="mainforminput" id="country_of_origin" name="country_of_origin" type="text" value="{{user.country_of_origin}}" disabled>
+                                        {% endif %}{% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!--Cuisines-->
+                                
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">map</i>
+                                        <select id="cuisine_name" name="cuisine_name" required="" aria-required="true">
+                                          <option value="" disabled selected>Select Cuisine</option>
+                                          {% for cuisine in cuisines %}
+                                              <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
+                                          {% endfor %}
+                                        </select>
+                                        <label for="cuisine_name">Cuisine</label>
+                                    </div>
+                                   <!--Allergens-->
+                                   <div class="input-field col s12">
+                                        <i class="material-icons prefix">priority_high</i>
+                                        <select multiple id="allergen_name" name="allergen_name" required="" aria-required="true">
+                                          <option value="" disabled selected>Select Allergens</option>
+                                          {% for allergy in allergens %}
+                                              <option value="{{allergy.allergen_name}}">{{allergy.allergen_name}}</option>
+                                          {% endfor %}
+                                        </select>
+                                        <label for="allergen_name">Allergens</label>
+                                    </div>
+                                </div>
+                                
+                              
+                                 <div class="row">
+                                     <!--Preparation Time-->
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">schedule</i>
+                                        <input id="prep_time" name="prep_time" type="text" class="validate timepicker mainforminput" placeholder="Preparation Time">
+                                        <label for="prep_time">Preparation Time</label>
+                                    </div>
+                                    <!--Cooking Time-->
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">schedule</i>
+                                        <input id="cooking_time" name="cooking_time" type="text" class="validate timepicker mainforminput" placeholder="Cooking Time">
+                                        <label for="cooking_time">Cooking Time</label>
+                                    </div>
+                                    
+                                </div>
+                                
+                                 <!--Serves-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">local_dining</i>
+                                      <input class="mainforminput" id="serves" name="serves" type="text" class="validate" required="" placeholder="Serves eg: 11-12, 2">
+                                      <label for="icon_prefix">Serves</label>
+                                    </div>
+                                </div>
+                                
+                                 <!--Image Link-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">insert_link</i>
+                                      <input class="mainforminput" id="image_link" name="image_link" type="text" class="validate" required="" placeholder="URL">
+                                      <label for="icon_prefix">Image Link</label>
+                                    </div>
+                                </div>
+                                
+                                <!--Ingredients-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">mode_edit</i>
+                                      <textarea  id="ingredients" name="ingredients" type="text" class="materialize-textarea validate mainforminput" placeholder="List of Ingredients     Enter one ingredient on each line &#10;Ingredients Example: 2 tsp cumin seeds" required=""></textarea>
+                                      <label for="icon_prefix">Ingredients</label>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!--Method-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">format_list_numbered</i>
+                                      <textarea id="method" name="method" type="text" class="materialize-textarea validate mainforminput" placeholder="Steps   Enter each step on each line &#10;Example: 1.Heat a large saucepan and dry-fry 2 tsp cumin seeds.." required=""></textarea>
+                                      <label for="icon_prefix">Method</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <button type="submit" class="btn btn-info btn-block "  onclick="{{ url_for( 'insert_recipe')}}">
+                                        Add Recipe
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<br/>
+{% endblock %}

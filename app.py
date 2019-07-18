@@ -1,6 +1,7 @@
 import os
 from flask import Flask,render_template,request,session,flash,redirect,url_for
 from flask_pymongo import PyMongo,DESCENDING
+from bson.objectid import ObjectId 
 import bcrypt
 
 app = Flask(__name__)
@@ -52,7 +53,7 @@ def register():
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
             users.insert_one(
-              { 'user_name' : request.form['user_name'], 'password' : hashpass, 'email' : request.form['email'] } )
+              { 'user_name' : request.form['user_name'], 'password' : hashpass,'country_of_origin':request.form['country_of_origin'], 'email' : request.form['email'] } )
             session['user_name'] = request.form['user_name']
             return redirect(url_for('index'))
         
@@ -60,6 +61,24 @@ def register():
 
     return render_template('register.html')
 
+@app.route('/add_recipe')
+def add_recipe():
+        return render_template('addrecipe.html',username=session['user_name'],
+                    allergens=mongo.db.allergens.find(),
+                    cuisines=mongo.db.cuisines.find(),
+                    users=mongo.db.users.find())
+
+                            
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes=mongo.db.recipes
+    data=request.form.to_dict()
+    data['allergen_name']=request.form.getlist('allergen_name')
+    data['views']= 0
+    data['upvotes']= 0
+    data['user_name']=session['user_name']
+    recipes.insert_one(data)
+    return redirect(url_for('login'))
     
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),
