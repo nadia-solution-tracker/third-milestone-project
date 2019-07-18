@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--Header-->
+<header id="heading"></header><br/>
+    {% if 'user_name' in session %}
+         <h2 class="content"> {{ session['user_name'] }}'s Recipes </h2> 
+    {% endif %}
+    <div class="row">
+    {% for recipe in recipes %}{% if recipe.user_name == username %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card"><img src="{{recipe.image_link}}" class="image_style">
+                <div class="card-block">
+                    <h4 class="card-title" id="recipe_name">{{recipe.recipe_name}}</h4>
+                    <p class="card-text" id="description">{{recipe.short_description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="/view_recipe/{{ recipe._id }}">View Recipe</a><br/>
+                    <a href="/edit_recipe/{{ recipe._id }}">Edit Recipe</a>
+                    <a href="/delete_recipe/{{ recipe._id }}">Delete Recipe</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}{% endfor %}
+</div>
+   <div class="pagination row">
+        {{ pagination.info }}
+        {{ pagination.links }}
+    </div>
+{% endblock %}
+
+
+
+

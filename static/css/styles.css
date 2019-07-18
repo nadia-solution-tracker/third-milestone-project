@@ -35,6 +35,11 @@
   font-size: 30px;
   
 }
+
+.card-action a{
+    font-size: 20px;
+}
+
 .card-body-content{
   text-shadow: 4px 4px 4px #aaa;
   background-color:#80c9c0;
@@ -83,6 +88,26 @@
     height:200px;
     padding-top:15px;
 }
+
+/*-------------Pagination-*/
+.pagination { 
+    display: inline-block; 
+} 
+.pagination a { 
+    font-weight:bold; 
+    font-size:20px; 
+    color: black; 
+    float: left; 
+    padding: 8px 16px; 
+    text-decoration: none; 
+    border:1px solid black; 
+} 
+.pagination a.active { 
+    background-color:#009900; 
+} 
+.pagination a:hover:not(.active) { 
+    background-color: #d4d5d2; 
+} 
 
 
 /*-------------Footer-*/
