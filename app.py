@@ -81,7 +81,28 @@ def insert_recipe():
     data['user_name']=session['user_name']
     recipes.insert_one(data)
     return redirect(url_for('user_recipes'))
-    
+
+@app.route('/get_recipes')
+def get_recipes():
+    ITEMS_PER_PAGE=6
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    total = mongo.db.recipes.count_documents({})
+    recipes_fetched = mongo.db.recipes.find().skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+    pagination = Pagination(page=page,
+                            per_page=ITEMS_PER_PAGE,
+                            total=total,
+                            record_name='Recipes',
+                            format_total=True,
+                            format_number=True,
+                            css_framework='foundation')
+    return render_template('recipes.html',
+                           recipes=recipes_fetched,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find(),
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
+                           
+
 @app.route('/user_recipes')
 def user_recipes():
     if not 'user_name' in session:
