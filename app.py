@@ -109,12 +109,14 @@ def user_recipes():
     else:
         #https://gist.github.com/Faizanq/a4d07f1a9624bdf6d3ddd9d4d6cc1b2d
         page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
-        total = mongo.db.recipes.count_documents({})
-        my_recipes_fetched = mongo.db.recipes.find().sort([('upvotes', DESCENDING)]).skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+        user_recipes_filtered =  mongo.db.recipes.find({ "user_name": session['user_name'] })
+        total=user_recipes_filtered.count()
+        my_recipes_fetched =user_recipes_filtered  .sort([('upvotes', DESCENDING)]).skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
         pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total,record_name='Recipes')
         return render_template('userrecipes.html',recipes=my_recipes_fetched,username=session['user_name'],page=page,
                            per_page=per_page,
                            pagination=pagination)
+                           
                            
 @app.route('/search_recipes',methods=['GET','POST'])
 def search_recipes():
@@ -177,6 +179,18 @@ def search_recipes():
                            per_page=per_page,
                            pagination=pagination)
                            
+@app.route("/view_recipe/<recipe_id>")
+def view_recipe(recipe_id):
+    recipe=mongo.db.recipes.find_one_and_update({'_id':ObjectId(recipe_id)},{'$inc':{'views':1}})
+    return render_template('viewrecipe.html',recipe=recipe)
+    
+    
+@app.route("/increase_upvotes/<recipe_id>")
+def increase_upvotes(recipe_id):
+    recipe=mongo.db.recipes.find_one_and_update({'_id':ObjectId(recipe_id)},{'$inc':{'upvotes':1}})
+    return redirect(url_for('get_recipes'))
+    
+    
     
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),

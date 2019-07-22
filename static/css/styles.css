@@ -11,7 +11,8 @@
   font-size: 48px;
   text-shadow: 4px 4px 4px #aaa;
 }
-.navbar-background{
+.navbar-background,
+div#navbarResponsive.navbar-collapse.collapse.show{
     background-color:#CD9B1D;
 }
 
@@ -89,9 +90,6 @@
     padding-top:15px;
 }
 
-#filter_submit_btn{
-    top:120px;
-}
 
 /*-------------Pagination-*/
 .pagination { 
