@@ -84,7 +84,6 @@ def insert_recipe():
 
 @app.route('/get_recipes')
 def get_recipes():
-    ITEMS_PER_PAGE=6
     page, per_page, offset = get_page_args(page_parameter='page',
                                            per_page_parameter='per_page')
     total = mongo.db.recipes.count_documents({})
@@ -116,6 +115,68 @@ def user_recipes():
         return render_template('userrecipes.html',recipes=my_recipes_fetched,username=session['user_name'],page=page,
                            per_page=per_page,
                            pagination=pagination)
+                           
+@app.route('/search_recipes',methods=['GET','POST'])
+def search_recipes():
+    if request.method=='POST':
+        cuisine=request.form.get("cuisine_name_filter")
+        allergen=request.form.get("allergen_name_filter")
+        search_item=request.form.get('search_item')
+        page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+        total = mongo.db.recipes.count_documents({})
+        recipes_fetched = mongo.db.recipes.find().skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+        pagination = Pagination(page=page,
+                            per_page=ITEMS_PER_PAGE,
+                            total=total,
+                            record_name='Recipes',
+                            format_total=True,
+                            format_number=True,
+                            css_framework='foundation')
+        
+        query={}
+        if cuisine:
+            filter_cuisine_recipes=mongo.db.recipes.find({"cuisine_name":cuisine})
+            page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
+            total_filter_recipes=filter_cuisine_recipes.count()
+            cuisine_recipes_fetched= filter_cuisine_recipes.skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+            pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total_filter_recipes,record_name='Recipes')
+            return render_template('search.html',recipes=cuisine_recipes_fetched,query=cuisine,page=page,
+                               per_page=per_page,
+                               pagination=pagination)  
+                               
+        if allergen:
+            filter_allergen_recipes=mongo.db.recipes.find({"allergen_name":allergen})
+            page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
+            total_filter_recipes=filter_allergen_recipes.count()
+            allergen_recipes_fetched= filter_allergen_recipes.skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+            pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total_filter_recipes,record_name='Recipes')
+            return render_template('search.html',recipes=allergen_recipes_fetched,query=allergen,page=page,
+                               per_page=per_page,
+                               pagination=pagination)  
+                               
+        else:
+            #  create the index
+            mongo.db.recipes.create_index( [("$**", 'text')] )
+            page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
+
+             # search with the search term that came through the form
+            cursor = mongo.db.recipes.find({ "$text": { "$search": search_item } })
+            total_filter_recipes=cursor.count()
+            pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total_filter_recipes,record_name='Recipes')
+            recipes = [recipe for recipe in cursor]
+            
+            # send recipes to page
+            return render_template('search.html', recipes=recipes, query=search_item,page=page,
+                               per_page=per_page,
+                               pagination=pagination)
+            
+    return render_template('recipes.html',
+                           recipes=recipes_fetched,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find(),
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
+                           
     
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),

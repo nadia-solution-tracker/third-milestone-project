@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--Header-->
+<header id="heading"></header>
+    <h1>Results for: <em>{{ query }}</em> </h1>
+<div class="row">
+    {% for recipe in recipes %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card"><img src="{{recipe.image_link}}" class="image_style">
+          <div class="card-block">
+            <h4 class="card-title" id="recipe_name">{{recipe.recipe_name}}</h4>
+    
+            <p class="card-text" id="description">{{recipe.short_description}}</p>
+          </div>
+          <div class="card-action">
+                <a href="/view_recipe/{{ recipe._id }}">View Recipe</a>
+            </div>
+   
+        </div>
+      </div>
+    {% endfor %}
+</div>
+<div class="pagination row">
+    {{ pagination.info }}
+    {{ pagination.links }}
+</div>
+
+{%  endblock %}

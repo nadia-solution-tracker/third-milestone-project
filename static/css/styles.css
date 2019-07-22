@@ -89,6 +89,10 @@
     padding-top:15px;
 }
 
+#filter_submit_btn{
+    top:120px;
+}
+
 /*-------------Pagination-*/
 .pagination { 
     display: inline-block; 
