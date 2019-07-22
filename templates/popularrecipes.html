@@ -42,7 +42,7 @@
       
       <div class="row">
           <a class="waves-effect waves-light btn" href="{{url_for('most_popular_recipes')}}">Sort by most popular</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="waves-effect waves-light btn" href="{{url_for('most_viewed_recipes')}}">Most Viewed</a>
+          <a class="waves-effect waves-light btn" href="">Most Viewed</a>
       </div>
     </div>
   </form>
@@ -65,9 +65,6 @@
       {% endfor %}
   </div>
   
-  <div class="pagination row">
-    {{ pagination.info }}
-    {{ pagination.links }}
-  </div>
+
 {% endblock %}
  

@@ -1,28 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
 <!--Header-->
-<header id="heading"></header>
-    <h1>Results for: <em>{{ query }}</em> </h1>
-<div class="row">
-    {% for recipe in recipes %}
-      <div class="col-md-6 col-lg-4">
-        <div class="card"><img src="{{recipe.image_link}}" class="image_style">
-          <div class="card-block">
-            <h4 class="card-title" id="recipe_name">{{recipe.recipe_name}}</h4>
-    
-            <p class="card-text" id="description">{{recipe.short_description}}</p>
-          </div>
-          <div class="card-action">
-                <a href="/view_recipe/{{ recipe._id }}">View Recipe</a>
+  <header id="heading"></header>
+  <br/>
+  <div class="row">
+    <h1>Results for: <em>{{ query }}</em> </h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="waves-effect waves-light btn" href="{{url_for('get_recipes')}}">Go Back to Recipe Page</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+
+  <div class="row">
+      {% for recipe in recipes %}
+        <div class="col-md-6 col-lg-4">
+          <div class="card"><img src="{{recipe.image_link}}" class="image_style">
+            <div class="card-block">
+              <h4 class="card-title" id="recipe_name">{{recipe.recipe_name}}</h4>
+      
+              <p class="card-text" id="description">{{recipe.short_description}}</p>
             </div>
-   
+            <div class="card-action">
+                  <a href="/view_recipe/{{ recipe._id }}">View Recipe</a>
+                  <i class="material-icons">thumb_up</i> {{recipe.upvotes}}
+                  <i class="material-icons">remove_red_eye</i> {{recipe.views}}
+              </div>
+     
+          </div>
         </div>
-      </div>
-    {% endfor %}
-</div>
-<div class="pagination row">
-    {{ pagination.info }}
-    {{ pagination.links }}
-</div>
+      {% endfor %}
+  </div>
+  <div class="pagination row">
+      {{ pagination.info }}
+      {{ pagination.links }}
+  </div>
 
 {%  endblock %}
