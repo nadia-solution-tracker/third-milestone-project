@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<!--Header-->
+<!--Header Image-->
 <header id="heading"></header>
     <br/>
     <main class="my-form">
@@ -120,10 +119,12 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col">
-                                    <button type="submit" class="btn btn-info btn-block "  onclick="{{ url_for( 'insert_recipe')}}">
-                                        Add Recipe
-                                    </button>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-info"  onclick="{{ url_for( 'insert_recipe')}}">
+                                            Add Recipe <i class="material-icons">create</i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </form>

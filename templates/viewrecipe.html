@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<!--Header-->
+<!--Header Image-->
 <header id="heading"></header>
     <br/>
     <div class="container">
@@ -25,13 +24,8 @@
                                     <i class="material-icons prefix">local_dining</i>  Serves : {{recipe.serves}}
                                     <br/><br/>
                                     Allergens : {{recipe.allergen_name}}<br/><br/>
-                                    {% if 'user_name' in session %}
-                                        <i class="material-icons">thumb_up</i> {{recipe.upvotes}}
-                                        <i class="material-icons">remove_red_eye</i> {{recipe.views}}
-                                    {% else %}                  
                                         <i class="material-icons">remove_red_eye</i> Views : {{recipe.views}} &nbsp;
                                         <a href="{{url_for('increase_upvotes',recipe_id=recipe._id)}}"><i class="material-icons">thumb_up</i></a>Likes: {{recipe.upvotes}}
-                                    {% endif %} 
             
                                 </div>
                             </div>

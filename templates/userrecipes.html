@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<!--Header-->
+<!--Header Image-->
 <header id="heading"></header><br/>
     {% if 'user_name' in session %}
          <h2 class="content"> {{ session['user_name'] }}'s Recipes </h2> 
@@ -14,7 +14,6 @@
                     <p class="card-text" id="description">{{recipe.short_description}}</p>
                 </div>
                 <div class="card-action">
-                    <a href="/view_recipe/{{ recipe._id }}">View Recipe</a><br/>
                     <a href="/edit_recipe/{{ recipe._id }}">Edit Recipe</a>
                     <a href="/delete_recipe/{{ recipe._id }}">Delete Recipe</a>
                 </div>

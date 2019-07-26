@@ -1,0 +1,162 @@
+{% extends 'base.html' %} 
+{% block content %}
+<!--Header Image-->
+<header id="heading"></header>
+    <br/>
+    <main class="my-form">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header"><h4 class="text-center">EDIT RECIPE</h4></div>
+                        <div class="card-body">
+                            <form method="POST" action="{{ url_for('update_recipe', recipe_id=recipe._id)}}">
+                                <!--Recipe Name-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">restaurant</i>
+                                      <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
+                                      <label for="icon_prefix">Recipe Name</label>
+                                    </div>
+                                </div>
+
+                                <!--Short Description-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">short_text</i>
+                                      <input id="short_description" name="short_description" type="text" class="validate" value="{{recipe.short_description}}">
+                                      <label for="icon_prefix">Short Description</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">short_text</i>
+                                        {% for user in users %}{% if user.user_name == username %}
+                                            <input class="mainforminput" id="country_of_origin" name="country_of_origin" type="text" value="{{user.country_of_origin}}" disabled>
+                                        {% endif %}{% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!--Cuisines-->
+                                
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">map</i>
+                                        <select id="cuisine_name" name="cuisine_name">
+                                            <option value="" disabled selected>Select Cuisine</option>
+                                            <option {% if 'American' in recipe.cuisine_name %}selected{%endif%} value="American">American</option>
+                                            <option {% if 'British' in recipe.cuisine_name %}selected{%endif%} value="British">British</option>
+                                            <option {% if 'Caribbean' in recipe.cuisine_name %}selected{%endif%} value="Caribbean">Caribbean</option>
+                                            <option {% if 'Chinese' in recipe.cuisine_name %}selected{%endif%} value="Chinese">Chinese</option>
+                                            <option {% if 'Irish' in recipe.cuisine_name %}selected{%endif%} value="Irish">Irish</option>
+                                            <option {% if 'Greek' in recipe.cuisine_name %}selected{%endif%} value="Greek">Greek</option>
+                                            <option {% if 'Indian' in recipe.cuisine_name %}selected{%endif%} value="Indian">Indian</option>
+                                            <option {% if 'Italian' in recipe.cuisine_name %}selected{%endif%} value="Italian">Italian</option>
+                                            <option {% if  'Japanese' in recipe.cuisine_name %}selected{%endif%} value="Japanese">Japanese</option>
+                                            <option {% if 'Mediterranean' in recipe.cuisine_name %}selected{%endif%} value="Mediterranean">Mediterranean</option>
+                                            <option {% if 'Mexican' in recipe.cuisine_name %}selected{%endif%} value="Mexican">Mexican</option>
+                                            <option {% if 'Spanish' in recipe.cuisine_name %}selected{%endif%} value="Spanish">Spanish</option>
+                                            <option {% if 'Thai' in recipe.cuisine_name %}selected{%endif%} value="Thai">Thai</option>
+                                            <option {% if 'Turkish' in recipe.cuisine_name %}selected{%endif%} value="Turkish">Turkish</option>
+                                            <option {% if 'Vietnamese' in recipe.cuisine_name %}selected{%endif%} value="Vietnamese">Vietnamese</option>
+                                        </select>
+                                        <label>Cuisine</label>
+                                    </div>
+                                    
+                                   <!--Allergens-->
+                                   <div class="input-field col s12">
+                                        <i class="material-icons prefix">priority_high</i>
+                                        <select multiple id="allergen_name" name="allergen_name">
+                                            <option value="" disabled selected>Select Allergens</option>
+                                            <option {% if 'Milk' in recipe.allergen_name %}selected{%endif%} value="Milk">Milk</option>
+                                            <option {% if 'Eggs' in recipe.allergen_name %}selected{%endif%} value="Eggs">Eggs</option>
+                                            <option {% if 'Fish' in recipe.allergen_name %}selected{%endif%} value="Fish">Fish</option>
+                                            <option {% if 'ShellFish' in recipe.allergen_name %}selected{%endif%} value="ShellFish">ShellFish</option>
+                                            <option {% if 'TreeNuts' in recipe.allergen_name %}selected{%endif%} value="TreeNuts">TreeNuts</option>
+                                            <option {% if 'Peanuts' in recipe.allergen_name %}selected{%endif%} value="Peanuts">Peanuts</option>
+                                            <option {% if 'Wheat' in recipe.allergen_name %}selected{%endif%} value="Wheat">Wheat</option>
+                                            <option {% if 'Soyabeans' in recipe.allergen_name %}selected{%endif%} value="Soyabeans">Soyabeans</option>
+                                            <option {% if 'None' in recipe.allergen_name %}selected{%endif%} value="None">None</option>
+                                        </select>
+                                        <label>Allergens</label>
+                                    </div>
+                                </div>
+                                
+                              
+                                <div class="row">
+                                     <!--Preparation Time-->
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">schedule</i>
+                                        <input id="prep_time" name="prep_time" type="text" class="validate timepicker mainforminput" value="{{recipe.prep_time}}" placeholder="Preparation Time">
+                                        <label for="prep_time">Preparation Time</label>
+                                    </div>
+                                    <!--Cooking Time-->
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">schedule</i>
+                                        <input id="cooking_time" name="cooking_time" type="text" class="validate timepicker mainforminput" value="{{recipe.cooking_time}}" placeholder="Cooking Time">
+                                        <label for="cooking_time">Cooking Time</label>
+                                    </div>
+                                    
+                                </div>
+                                
+                                 <!--Serves-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">local_dining</i>
+                                      <input id="serves" name="serves" type="text" class="validate" value="{{recipe.serves}}">
+                                      <label for="icon_prefix">Serves</label>
+                                    </div>
+                                </div>
+                                
+                                 <!--Image Link-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">insert_link</i>
+                                      <input id="image_link" name="image_link" type="text" class="validate" value="{{recipe.image_link}}">
+                                      <label for="icon_prefix">Image Link</label>
+                                    </div>
+                                </div>
+                                
+                                <!--Ingredients-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">mode_edit</i>
+                                      <textarea id="ingredients" name="ingredients" type="text" class="materialize-textarea validate">{{recipe.ingredients}}</textarea>
+                                      <label for="icon_prefix">Ingredients</label>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!--Method-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <i class="material-icons prefix">format_list_numbered</i>
+                                      <textarea id="method" name="method" type="text" class="materialize-textarea validate">{{recipe.method}}</textarea>
+                                      <label for="icon_prefix">Method</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <button type="submit" class="btn btn-info btn-block" name="action" onclick="{{ url_for('update_recipe', recipe_id=recipe._id)}}">
+                                            Edit Recipe<i class="material-icons"> done</i>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <button type="submit" class="btn btn-info btn-block" name="action" onclick="{{ url_for('user_recipes')}}">
+                                            Go Back to Recipe Page<i class="material-icons">keyboard_backspace</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<br/>
+{% endblock %}
+
+

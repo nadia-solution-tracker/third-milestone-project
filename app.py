@@ -199,7 +199,34 @@ def most_popular_recipes():
 def most_viewed_recipes():
     viewed_recipes=mongo.db.recipes.find({'$query':{},'$orderby':{'votes':-1}})
     return render_template("orderingrecipes.html",recipes=viewed_recipes,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find())
-    
+   
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    recipe=mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
+    return render_template('editrecipe.html',
+                            recipe=recipe,
+                            users=mongo.db.users.find(),username=session['user_name'])
+                            
+                            
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipe = mongo.db.recipes
+    recipe.update({'_id':ObjectId(recipe_id)},
+    {
+        'recipe_name':request.form.get('recipe_name'),
+        'short_description':request.form.get('short_description'),
+        'cuisine_name':request.form.get('cuisine_name'),
+        'allergen_name':request.form.getlist('allergen_name'),
+        'cooking_time':request.form.get('cooking_time'),
+        'prep_time':request.form.get('prep_time'),
+        'serves':request.form.get('serves'),
+        'image_link': request.form.get('image_link'),
+        'ingredients':request.form.get('ingredients'),
+        'method':request.form.get('method'),
+        'user_name':session['user_name']
+    })
+    return redirect(url_for('user_recipes'))
+     
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),
     port = int(os.environ.get('PORT')),

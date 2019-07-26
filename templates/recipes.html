@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<!--Header-->
+<!--Header Image-->
   <header id="heading"></header>
   <br/>
 
@@ -41,8 +41,8 @@
       </div>
       
       <div class="row">
-          <a class="waves-effect waves-light btn" href="{{url_for('most_popular_recipes')}}">Sort by most popular</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="waves-effect waves-light btn" href="{{url_for('most_viewed_recipes')}}">Most Viewed</a>
+          <a class="waves-effect waves-light btn" href="{{url_for('most_popular_recipes')}}">Sort by most popular  <i class="material-icons">thumb_up</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="waves-effect waves-light btn" href="{{url_for('most_viewed_recipes')}}">Most Viewed <i class="material-icons">remove_red_eye</i></a>
       </div>
     </div>
   </form>
