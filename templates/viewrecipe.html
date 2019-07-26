@@ -1,40 +1,51 @@
-{% extends 'base.html'%} {% block content %}
-    <br/><br/>
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col s12 m6">
-                    <img class="responsive-img" src="{{recipe.image_link}}" width="600" height="450">
-                </div>
-                <div class="col s12 m6">
-                    <div class="icon-block">
-                        <h2 class="strong-font">{{recipe.recipe_name}}</h2><br/><br/>
-                        <h6>Cuisine Type: {{recipe.cuisine_name}}</h6>
-                    </div><br/><br/>
-                        <h5 class="super-font">{{recipe.short_description}}</h5>
-                    <br/>
-                    <i class="material-icons prefix">schedule</i> Prep Time : {{recipe.prep_time }} &nbsp;
-                    <i class="material-icons prefix">schedule</i>  Cooking Time : {{recipe.cooking_time }} &nbsp;
-                    <i class="material-icons prefix">local_dining</i>  Serves : {{recipe.serves}}
-                    <br/><br/>
-                    Allergens : {{recipe.allergen_name}}
-                      
-                    <br/><br/>
-                   
-                        <i class="material-icons">remove_red_eye</i> Views : {{recipe.views}} &nbsp;
-                        <a href="{{url_for('increase_upvotes',recipe_id=recipe._id)}}"><i class="material-icons">thumb_up</i></a>Likes: {{recipe.upvotes}}
-                     
+{% extends 'base.html' %}
+{% block content %}
+
+<!--Header-->
+<header id="heading"></header>
+    <br/>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header"><h4 class="text-center">{{recipe.recipe_name}}</h4></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <img class="responsive-img view-image" src="{{recipe.image_link}}" width="600" height="450">
+                                </div>
+                                <div class="col s12 m6">
+                                    <div class="icon-block">
+                                        <h4>Cuisine Type: {{recipe.cuisine_name}}</h4>
+                                    </div><br/><br/>
+                                    <h4 class="text-justify">{{recipe.short_description}}</h4>
+                                    <br/>
+                                    <i class="material-icons prefix">schedule</i> Prep Time : {{recipe.prep_time }} &nbsp;
+                                    <i class="material-icons prefix">schedule</i>  Cooking Time : {{recipe.cooking_time }} &nbsp;
+                                    <i class="material-icons prefix">local_dining</i>  Serves : {{recipe.serves}}
+                                    <br/><br/>
+                                    Allergens : {{recipe.allergen_name}}<br/><br/>
+                                    {% if 'user_name' in session %}
+                                        <i class="material-icons">thumb_up</i> {{recipe.upvotes}}
+                                        <i class="material-icons">remove_red_eye</i> {{recipe.views}}
+                                    {% else %}                  
+                                        <i class="material-icons">remove_red_eye</i> Views : {{recipe.views}} &nbsp;
+                                        <a href="{{url_for('increase_upvotes',recipe_id=recipe._id)}}"><i class="material-icons">thumb_up</i></a>Likes: {{recipe.upvotes}}
+                                    {% endif %} 
             
-                </div>
-            </div>
-            
-            <div class="row">
-                <h5 class="super-font">Ingredients:</h5>
-                <p>{{ recipe.ingredients }}</p>
-                <h5 class="super-font">Method:</h5>
-                <p>{{recipe.method}}</p>
-                <p>Recipe by <em>{{recipe.user_name}}</em></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="super-font">Ingredients:</h5>
+                                <p>{{ recipe.ingredients }}</p>
+                                <h5 class="super-font">Method:</h5>
+                                <p>{{recipe.method}}</p>
+                                <p>Recipe by <em>{{recipe.user_name}}</em></p>
+                            </div>
+
+
+                        </div>
+                    </div>
             </div>
         </div>
-    </div>
-{% endblock %}
+{%  endblock %}

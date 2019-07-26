@@ -193,12 +193,12 @@ def increase_upvotes(recipe_id):
 @app.route("/most_popular_recipes")
 def most_popular_recipes():
     popular_recipes=mongo.db.recipes.find({'$query':{},'$orderby':{'upvotes':-1}})
-    return render_template("popularrecipes.html",recipes=popular_recipes,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find())
+    return render_template("orderingrecipes.html",recipes=popular_recipes,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find())
     
 @app.route("/most_viewed_recipes")
 def most_viewed_recipes():
-    viewed_recipes=mongo.db.recipes.find({'$query':{},'$orderby':{'views':-1}})
-    return render_template("mostviewedrecipes.html",recipes=viewed_recipes,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find())
+    viewed_recipes=mongo.db.recipes.find({'$query':{},'$orderby':{'votes':-1}})
+    return render_template("orderingrecipes.html",recipes=viewed_recipes,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find())
     
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),

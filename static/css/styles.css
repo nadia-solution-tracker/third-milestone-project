@@ -31,7 +31,8 @@ div#navbarResponsive.navbar-collapse.collapse.show{
 .content,
 .card-action,
 .card-header h4,
-#recipe_name{
+#recipe_name,
+div.icon-block{
   font-family: 'Mountains of Christmas', cursive;
   font-size: 30px;
   
@@ -56,6 +57,7 @@ div#navbarResponsive.navbar-collapse.collapse.show{
 
 .card-block{
     padding:18px;
+ 
 }
 
 /*-------------Placeholder style-*/
@@ -93,9 +95,11 @@ div#navbarResponsive.navbar-collapse.collapse.show{
 
 
 /*-------------Pagination-*/
-.pagination { 
-    display: inline-block; 
-} 
+.pagination {
+    display:table;
+    margin:0 auto;
+}
+
 .pagination a { 
     font-weight:bold; 
     font-size:20px; 
@@ -106,7 +110,7 @@ div#navbarResponsive.navbar-collapse.collapse.show{
     border:1px solid black; 
 } 
 .pagination a.active { 
-    background-color:#009900; 
+    background-color:#80c9c0; 
 } 
 .pagination a:hover:not(.active) { 
     background-color: #d4d5d2; 
@@ -141,6 +145,9 @@ footer{
 
 
 /*-------------Media Queries-*/
+
+
+
 @media screen and (max-width: 768px){
         .navbar-dark .navbar-brand{
         font-family: 'Mountains of Christmas', cursive;
@@ -157,6 +164,7 @@ footer{
        line-height: 4;
     }
     
+    
     .image_style{
         display: block; 
         margin-left: auto;
@@ -169,6 +177,10 @@ footer{
         font-family: 'Mountains of Christmas', cursive;
         opacity: 1; /* Firefox */
         font-size:15px;
+    }
+    .pagination {
+    display: inline-block;
+    text-align: center;
 }
 
 }
@@ -187,5 +199,9 @@ footer{
         height:300px;
         padding-top:15px;
   }
+  .pagination {
+    display: inline-block;
+    text-align: center;
+}
       
   }
