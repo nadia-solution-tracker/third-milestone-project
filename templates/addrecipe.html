@@ -37,6 +37,16 @@
                                             <input class="mainforminput" id="country_of_origin" name="country_of_origin" type="text" value="{{user.country_of_origin}}" disabled>
                                         {% endif %}{% endfor %}
                                     </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">map</i>
+                                        <select multiple id="meal_type" name="meal_type" required="" aria-required="true">
+                                          <option value="" disabled selected>Select Meal Type</option>
+                                          {% for meal in meals %}
+                                              <option value="{{meal.meal_type}}">{{meal.meal_type}}</option>
+                                          {% endfor %}
+                                        </select>
+                                        <label for="meal_type">Meal Type</label>
+                                    </div>
                                 </div>
                                 
                                 <!--Cuisines-->

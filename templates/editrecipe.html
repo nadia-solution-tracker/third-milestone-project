@@ -36,6 +36,19 @@
                                             <input class="mainforminput" id="country_of_origin" name="country_of_origin" type="text" value="{{user.country_of_origin}}" disabled>
                                         {% endif %}{% endfor %}
                                     </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">priority_high</i>
+                                        <select multiple id="meal_type" name="meal_type">
+                                            <option value="" disabled selected>Select Meal Type</option>
+                                            <option {% if 'BreakFast' in recipe.meal_type %}selected{%endif%} value="BreakFast">BreakFast</option>
+                                            <option {% if 'Brunch' in recipe.meal_type %}selected{%endif%} value="Brunch">Brunchs</option>
+                                            <option {% if 'Lunch' in recipe.meal_type %}selected{%endif%} value="Lunch">Lunch</option>
+                                            <option {% if 'Snack' in recipe.meal_type %}selected{%endif%} value="Snack">Snack</option>
+                                            <option {% if 'Dinner' in recipe.meal_type %}selected{%endif%} value="Dinner">Dinner</option>
+                                            <option {% if 'Dessert' in recipe.meal_type %}selected{%endif%} value="Dessert">Dessert</option>
+                                        </select>
+                                        <label>Allergens</label>
+                                    </div>
                                 </div>
                                 
                                 <!--Cuisines-->

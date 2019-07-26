@@ -68,13 +68,15 @@ def add_recipe():
         return render_template('addrecipe.html',username=session['user_name'],
                     allergens=mongo.db.allergens.find(),
                     cuisines=mongo.db.cuisines.find(),
-                    users=mongo.db.users.find())
+                    users=mongo.db.users.find(),
+                    meals=mongo.db.meals.find())
 
                             
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes=mongo.db.recipes
     data=request.form.to_dict()
+    data['meal_type']=request.form.getlist('meal_type')
     data['allergen_name']=request.form.getlist('allergen_name')
     data['views']= 0
     data['upvotes']= 0
@@ -97,6 +99,7 @@ def get_recipes():
                             css_framework='foundation')
     return render_template('recipes.html',
                            recipes=recipes_fetched,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find(),
+                           meals=mongo.db.meals.find(),
                            page=page,
                            per_page=per_page,
                            pagination=pagination)
@@ -123,6 +126,7 @@ def search_recipes():
     if request.method=='POST':
         cuisine=request.form.get("cuisine_name_filter")
         allergen=request.form.get("allergen_name_filter")
+        meal=request.form.get("meal_type_filter")
         search_item=request.form.get('search_item')
         page, per_page, offset = get_page_args(page_parameter='page',
                                            per_page_parameter='per_page')
@@ -154,6 +158,16 @@ def search_recipes():
             allergen_recipes_fetched= filter_allergen_recipes.skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
             pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total_filter_recipes,record_name='Recipes')
             return render_template('search.html',recipes=allergen_recipes_fetched,query=allergen,page=page,
+                               per_page=per_page,
+                               pagination=pagination)  
+                               
+        if meal:
+            filter_meal_recipes=mongo.db.recipes.find({"meal_type":meal})
+            page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
+            total_filter_recipes=filter_meal_recipes.count()
+            meal_recipes_fetched= filter_meal_recipes.skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+            pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total_filter_recipes,record_name='Recipes')
+            return render_template('search.html',recipes=meal_recipes_fetched,query=meal,page=page,
                                per_page=per_page,
                                pagination=pagination)  
                                
@@ -215,6 +229,7 @@ def update_recipe(recipe_id):
     {
         'recipe_name':request.form.get('recipe_name'),
         'short_description':request.form.get('short_description'),
+        'meal_type':request.form.getlist('meal_type'),
         'cuisine_name':request.form.get('cuisine_name'),
         'allergen_name':request.form.getlist('allergen_name'),
         'cooking_time':request.form.get('cooking_time'),

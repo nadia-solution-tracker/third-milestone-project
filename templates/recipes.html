@@ -28,17 +28,35 @@
           
         </div>
         
-         <button id="filter_submit_btn" class=" btn btn-info btn-xs"  type="submit">Filter Recipes
-          <i class="material-icons right">search</i>
-        </button>
+        
+        <div class="input-field col s12">
+          <i class="material-icons prefix">priority_high</i>
+          <select id="meal_type_filter" name="meal_type_filter">
+            <option value="" disabled selected>Select Meal Type</option>
+            {% for meal in meals %}
+              <option value="{{meal.meal_type}}">{{meal.meal_type}}</option>
+            {% endfor %}
+          </select>
+          
+        </div>
+        
+      
        
         
       </div>
       
       <div class="row">
+        <div class="col-md-12 text-center">
+            <button id="filter_submit_btn" class=" btn btn-info btn-xs"  type="submit">Filter Recipes
+            <i class="material-icons right">search</i>
+            </button>
+        </div>
+      </div>
+      <div class="row">
         <i class="material-icons">search</i> 
         <input class="form-control form-control-sm ml-3 w-75" type="text" id="serach_item"  name="search_item"  placeholder="Search Recipes,Ingredients or Keywords" aria-label="Search">
       </div>
+      
       
       <div class="row">
           <a class="waves-effect waves-light btn" href="{{url_for('most_popular_recipes')}}">Sort by most popular  <i class="material-icons">thumb_up</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
