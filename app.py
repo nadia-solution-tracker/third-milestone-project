@@ -123,6 +123,7 @@ def user_recipes():
                            
 @app.route('/search_recipes',methods=['GET','POST'])
 def search_recipes():
+    
     if request.method=='POST':
         cuisine=request.form.get("cuisine_name_filter")
         allergen=request.form.get("allergen_name_filter")
@@ -193,10 +194,17 @@ def search_recipes():
                            per_page=per_page,
                            pagination=pagination)
                            
+
+            
+    
+                           
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
     recipe=mongo.db.recipes.find_one_and_update({'_id':ObjectId(recipe_id)},{'$inc':{'views':1}})
-    return render_template('viewrecipe.html',recipe=recipe)
+    if not 'user_name' in session:
+        return render_template('viewrecipe.html',recipe=recipe)
+    else:
+        return render_template('viewrecipe.html',recipe=recipe,username=session['user_name'])
     
     
 @app.route("/increase_upvotes/<recipe_id>")
@@ -241,7 +249,13 @@ def update_recipe(recipe_id):
         'user_name':session['user_name']
     })
     return redirect(url_for('user_recipes'))
-     
+
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    recipe=mongo.db.recipes.remove({"_id":ObjectId(recipe_id)})
+    return redirect(url_for('get_recipes'))
+
+   
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),
     port = int(os.environ.get('PORT')),

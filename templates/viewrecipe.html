@@ -38,9 +38,13 @@
                                             , 
                                         {% endif %}
                                     {% endfor %}   <br/><br/>
+                                    
+                                    {% if 'user_name' in session %}
+                                        <i class="material-icons">remove_red_eye</i> Views : {{recipe.views}} &nbsp;
+                                    {% else %}
                                         <i class="material-icons">remove_red_eye</i> Views : {{recipe.views}} &nbsp;
                                         <a href="{{url_for('increase_upvotes',recipe_id=recipe._id)}}"><i class="material-icons">thumb_up</i></a>Likes: {{recipe.upvotes}}
-            
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="row">

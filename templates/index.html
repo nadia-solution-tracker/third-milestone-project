@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="card text-white text-center card-body-content">
+    <div class="text-white text-center card-body-content">
       <p>Cooking is all about people.Food is maybe the only univeral thing that really has the power to bring everyone together.No
           matter what culture ,everywhere around the world,people get together to eat</p>
     </div>
@@ -26,7 +26,7 @@
         <div class="col-md-4 col-lg-4">
           <div class="card"><img src="{{recipe.image_link}}" class="image_style">
             <div class="card-block">
-              <h4 class="card-title text-center" id="recipe_name">{{recipe.recipe_name}}</h4>
+              <h4 class="card-title text-center" id="recipe_name"><a href="/view_recipe/{{ recipe._id }}">{{recipe.recipe_name}}</a></h4>
               <p class="card-text text-justify" id="description">{{recipe.short_description}}</p>
             </div>
             <div class="card-action text-center">
