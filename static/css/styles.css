@@ -88,6 +88,9 @@ div.card{
     border-color: #285e8e; /*set the color you want here*/
 }
 
+
+/*-------------Images-*/
+
 .image_style{
     display: block; 
     margin-left: auto;
@@ -95,8 +98,8 @@ div.card{
     width:300px; 
     height:200px;
     padding-top:15px;
+    
 }
-
 
 /*-------------Pagination-*/
 .pagination {
@@ -150,7 +153,18 @@ footer{
 
 /*-------------Media Queries-*/
 
+@media screen and (max-width: 320px){
+    
+    .image_style{
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+        width:130px; 
+        height:130px;
+        padding-top:15px;
+    }
 
+}
 @media screen and (max-width: 1250px){
     
     
@@ -203,23 +217,3 @@ footer{
 
 }
 
-
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1){
-      
-       .image_style{
-        display: block; 
-        margin-left: auto;
-        margin-right: auto;
-        width:200px; 
-        height:300px;
-        padding-top:15px;
-  }
-  .pagination {
-    display: inline-block;
-    text-align: center;
-}
-      
-  }

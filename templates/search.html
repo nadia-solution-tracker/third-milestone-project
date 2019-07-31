@@ -4,7 +4,14 @@
   <header id="heading"></header>
   <br/>
   <div class="row">
-    <h1>Results for: <em>{{ query }}</em> </h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h1>Results for: <em>
+      {% for  each_value in query %}
+          {{each_value}}
+          {% if  not loop.last %}
+              , 
+          {% endif %}
+      {% endfor %}  
+    </em> </h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a class="waves-effect waves-light btn" href="{{url_for('get_recipes')}}">Go Back to Recipe Page</a>&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
    <div class="pagination row">
@@ -15,12 +22,12 @@
         <div class="col-md-6 col-lg-4">
           <div class="card"><img src="{{recipe.image_link}}" class="image_style">
             <div class="card-block">
-              <h4 class="card-title" id="recipe_name">{{recipe.recipe_name}}</h4>
+              <h4 class="card-title" id="recipe_name"> <a href="/view_recipe/{{ recipe._id }}">{{recipe.recipe_name}}</a></h4>
       
               <p class="card-text" id="description">{{recipe.short_description}}</p>
             </div>
             <div class="card-action">
-                  <a href="/view_recipe/{{ recipe._id }}">View Recipe</a>
+                  <a href="/view_recipe/{{ recipe._id }}" class="btn btn-primary btn-sm">View Recipe</a>
                   <i class="material-icons">thumb_up</i> {{recipe.upvotes}}
                   <i class="material-icons">remove_red_eye</i> {{recipe.views}}
               </div>
