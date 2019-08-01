@@ -94,10 +94,7 @@ def get_recipes():
     pagination = Pagination(page=page,
                             per_page=ITEMS_PER_PAGE,
                             total=total,
-                            record_name='Recipes',
-                            format_total=True,
-                            format_number=True,
-                            css_framework='foundation')
+                            record_name='Recipes')
     return render_template('recipes.html',
                            recipes=recipes_fetched,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find(),
                            meals=mongo.db.meals.find(),
@@ -115,7 +112,7 @@ def user_recipes():
         page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
         user_recipes_filtered =  mongo.db.recipes.find({ "user_name": session['user_name'] })
         total=user_recipes_filtered.count()
-        my_recipes_fetched =user_recipes_filtered  .sort([('upvotes', DESCENDING)]).skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+        my_recipes_fetched =user_recipes_filtered .sort([('upvotes', DESCENDING)]).skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
         pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total,record_name='Recipes')
         return render_template('userrecipes.html',recipes=my_recipes_fetched,username=session['user_name'],page=page,
                            per_page=per_page,

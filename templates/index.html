@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="container">
-    <br/>
+    <br/><br/>
+    {% if 'user_name' in session %}
+         <h2 class="content"> WELCOME {{ session['user_name'].upper()}} </h2> 
+    {% endif %}
     <div class="row align-items-center my-5">
       <div class="col-lg-7">
-        <img class="img-fluid" src="https://schmittat.uk/wp-content/uploads/Surrey-and-London-Food-Photographer_09-1024x683.jpg" alt="">
+         <div class="carousel carousel-slider">
+          <a class="carousel-item" href="#one!"><img src="https://mediad.publicbroadcasting.net/p/kcur/files/styles/x_large/public/201801/Cashew-Chicken-Dish-Chinese-Food-1273256.jpg"></a>
+          <a class="carousel-item" href="#two!"><img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/best_and_worst_indian_dishes_for_your_health_slideshow/1800x1200_best_and_worst_indian_dishes_for_your_health_slideshow.jpg"></a>
+          <a class="carousel-item" href="#three!"><img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.realsimple.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fspicy-coconut-noodles_copy.jpg%3Fitok%3De4uAarrQ%261563811256&q=85"></a>
+          <a class="carousel-item" href="#four!"><img src="https://www.medicalnewstoday.com/content//images/articles/321/321291/grilled-beef-steaks.jpg"></a>
+           <a class="carousel-item" href="#five!"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Amandine_cake.jpg/1200px-Amandine_cake.jpg"></a>
+        </div>
+        <!--<img class="img-fluid" src="https://schmittat.uk/wp-content/uploads/Surrey-and-London-Food-Photographer_09-1024x683.jpg" alt="">-->
       </div>
       <div class="col-lg-5 welcome-line">
         <h1 class="font-weight-light">WANT TO SHARE RECIPES!!!</h1>
@@ -24,7 +34,7 @@
     <div class="row">
       {% for recipe in recipes %}
         <div class="col-md-4 col-lg-4">
-          <div class="card"><img src="{{recipe.image_link}}" class="image_style">
+          <div class="card"><img src="{{recipe.image_link}}" class="image_style materialboxed">
             <div class="card-block">
               <h4 class="card-title text-center" id="recipe_name"><a href="/view_recipe/{{ recipe._id }}">{{recipe.recipe_name}}</a></h4>
               <p class="card-text text-justify" id="description">{{recipe.short_description}}</p>

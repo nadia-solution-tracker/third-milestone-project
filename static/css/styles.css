@@ -101,6 +101,7 @@ div.card{
     
 }
 
+
 /*-------------Pagination-*/
 .pagination {
     display:table;
@@ -176,6 +177,10 @@ footer{
         height:200px;
         padding-top:15px;
     }
+    
+    div.card{
+    min-height:500px;
+}
 
 
 }
@@ -187,6 +192,9 @@ footer{
         text-shadow: 4px 4px 4px #aaa;
     }
 
+    div.card{
+        min-height:580px;
+    }
     #footer-details h6,
     #footer-details a i{
         text-align: center;
@@ -201,8 +209,8 @@ footer{
         display: block; 
         margin-left: auto;
         margin-right: auto;
-        width:300px; 
-        height:300px;
+        width:170px; 
+        height:200px;
         padding-top:15px;
     }
     .mainforminput::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */

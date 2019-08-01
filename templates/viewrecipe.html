@@ -39,7 +39,7 @@
                                         {% endif %}
                                     {% endfor %}   <br/><br/>
                                     
-                                    {% if 'user_name' in session %}
+                                    {% if 'user_name' in session and recipe.user_name==session['user_name'] %}
                                         <i class="material-icons">remove_red_eye</i> Views : {{recipe.views}} &nbsp;
                                     {% else %}
                                         <i class="material-icons">remove_red_eye</i> Views : {{recipe.views}} &nbsp;

@@ -30,7 +30,7 @@
         
         
         <div class="input-field col s12">
-          <i class="material-icons prefix">priority_high</i>
+          <i class="material-icons prefix">local_dining</i>
           <select id="meal_type_filter" name="meal_type_filter">
             <option value="" disabled selected>Select Meal Type</option>
             {% for meal in meals %}
@@ -78,7 +78,7 @@
   <div class="row">
       {% for recipe in recipes %}
         <div class="col-md-6 col-lg-4">
-          <div class="card"><img src="{{recipe.image_link}}" class="image_style">
+          <div class="card"><img src="{{recipe.image_link}}" class="image_style materialboxed">
             <div class="card-block">
               <h4 class="card-title" id="recipe_name">   <a href="/view_recipe/{{ recipe._id }}">{{recipe.recipe_name}}</a></h4>
               <p class="card-text" id="description">{{recipe.short_description}}</p>

@@ -74,7 +74,7 @@
       <div class="container-fluid">
        <div id="footer-details" class="row">
             <div class="col-sm-6">
-                <a target="_blank" href="https://github.com/nadia-solution-tracker/second-milestone-project"><i class="fa fa-github"></i></a>            
+                <a target="_blank" href="https://github.com/nadia-solution-tracker/third-milestone-project"><i class="fa fa-github"></i></a>            
             </div>
             <div class="col-sm-6">
                 <form class="form" action="{{url_for('search_recipes')}}"  method="POST">
@@ -110,7 +110,16 @@
             top: '2em',
             left: '3em'
         });
-        $('input#short_description').characterCounter();
+         $('.materialboxed').materialbox();
+         $('.carousel').carousel();
+          setInterval(function() {
+ 
+        $('.carousel').carousel('next');
+ 
+        }, 3500);   
+ 
+        $('.modal').modal();
+        
       });
       //code for timepicker
       //https://github.com/chingyawhao/materialize-clockpicker
@@ -124,6 +133,7 @@
       $(document).on("mousedown", ".timepicker", function(event){
           event.preventDefault();
       });
+     
     </script>
 </body>
 </html>

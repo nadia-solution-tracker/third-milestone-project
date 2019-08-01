@@ -15,7 +15,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">restaurant</i>
-                                      <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
+                                      <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}" required>
                                       <label for="icon_prefix">Recipe Name</label>
                                     </div>
                                 </div>
@@ -24,7 +24,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">short_text</i>
-                                      <input id="short_description" name="short_description" type="text" class="validate" value="{{recipe.short_description}}">
+                                      <input id="short_description" name="short_description" type="text" class="validate" value="{{recipe.short_description}}" required>
                                       <label for="icon_prefix">Short Description</label>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">priority_high</i>
-                                        <select multiple id="meal_type" name="meal_type">
+                                        <select multiple id="meal_type" name="meal_type" required="" aria-required="true">
                                             <option value="" disabled selected>Select Meal Type</option>
                                             <option {% if 'BreakFast' in recipe.meal_type %}selected{%endif%} value="BreakFast">BreakFast</option>
                                             <option {% if 'Brunch' in recipe.meal_type %}selected{%endif%} value="Brunch">Brunchs</option>
@@ -56,7 +56,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">map</i>
-                                        <select id="cuisine_name" name="cuisine_name">
+                                        <select id="cuisine_name" name="cuisine_name" required="" aria-required="true">
                                             <option value="" disabled selected>Select Cuisine</option>
                                             <option {% if 'American' in recipe.cuisine_name %}selected{%endif%} value="American">American</option>
                                             <option {% if 'British' in recipe.cuisine_name %}selected{%endif%} value="British">British</option>
@@ -80,7 +80,7 @@
                                    <!--Allergens-->
                                    <div class="input-field col s12">
                                         <i class="material-icons prefix">priority_high</i>
-                                        <select multiple id="allergen_name" name="allergen_name">
+                                        <select multiple id="allergen_name" name="allergen_name" required="" aria-required="true">
                                             <option value="" disabled selected>Select Allergens</option>
                                             <option {% if 'Milk' in recipe.allergen_name %}selected{%endif%} value="Milk">Milk</option>
                                             <option {% if 'Eggs' in recipe.allergen_name %}selected{%endif%} value="Eggs">Eggs</option>
@@ -117,7 +117,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">local_dining</i>
-                                      <input id="serves" name="serves" type="text" class="validate" value="{{recipe.serves}}">
+                                      <input id="serves" name="serves" type="text" class="validate" value="{{recipe.serves}}"  required>
                                       <label for="icon_prefix">Serves</label>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">insert_link</i>
-                                      <input id="image_link" name="image_link" type="text" class="validate" value="{{recipe.image_link}}">
+                                      <input id="image_link" name="image_link" type="text" class="validate" value="{{recipe.image_link}}"  required>
                                       <label for="icon_prefix">Image Link</label>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">mode_edit</i>
-                                      <textarea id="ingredients" name="ingredients" type="text" class="materialize-textarea validate">{{recipe.ingredients}}</textarea>
+                                      <textarea id="ingredients" name="ingredients" type="text" class="materialize-textarea validate"  required>{{recipe.ingredients}}</textarea>
                                       <label for="icon_prefix">Ingredients</label>
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">format_list_numbered</i>
-                                      <textarea id="method" name="method" type="text" class="materialize-textarea validate">{{recipe.method}}</textarea>
+                                      <textarea id="method" name="method" type="text" class="materialize-textarea validate"  required>{{recipe.method}}</textarea>
                                       <label for="icon_prefix">Method</label>
                                     </div>
                                 </div>
