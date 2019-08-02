@@ -3,16 +3,18 @@
 /*------------Navigation--*/
 .welcome-line,
 #navbarResponsive{
-  font-family: 'Mountains of Christmas', cursive;
-  font-size: 20px;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 20px;
 }
+
 .navbar-dark .navbar-brand{
-  font-family: 'Mountains of Christmas', cursive;
-  font-size: 48px;
-  text-shadow: 4px 4px 4px #aaa;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
 }
+
 .navbar-background,
-div#navbarResponsive.navbar-collapse.collapse.show{
+div#navbarResponsive.navbar-collapse.collapse.show{    
     background-color:#CD9B1D;
 }
 
@@ -33,9 +35,8 @@ div#navbarResponsive.navbar-collapse.collapse.show{
 .card-header h4,
 #recipe_name,
 div.icon-block{
-  font-family: 'Mountains of Christmas', cursive;
-  font-size: 30px;
-  
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 30px;
 }
 
 div.card{
@@ -44,13 +45,12 @@ div.card{
 
 .card-action a{
     font-size: 15px;
-    
 }
 
 .card-body-content{
-  text-shadow: 4px 4px 4px #aaa;
-  background-color:#80c9c0;
-  padding-top:20px;
+    text-shadow: 4px 4px 4px #aaa;
+    background-color:#80c9c0;
+    padding-top:20px;
 }
 
 .content{
@@ -61,7 +61,6 @@ div.card{
 
 .card-block{
     padding:18px;
- 
 }
 
 /*-------------Placeholder style-*/
@@ -71,8 +70,6 @@ div.card{
     opacity: 1; /* Firefox */
     font-size:20px;
 }
-
-
 
 /*-------------Buttons-*/
 .btn-primary,
@@ -85,12 +82,22 @@ div.card{
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #00b3db;
-    border-color: #285e8e; /*set the color you want here*/
+    border-color: #285e8e;
 }
 
+#modal.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 50% !important;
+    height: 30% !important;
+    overflow: hidden;
+    outline: 0;
+}
 
 /*-------------Images-*/
-
 .image_style{
     display: block; 
     margin-left: auto;
@@ -98,9 +105,7 @@ div.card{
     width:300px; 
     height:200px;
     padding-top:15px;
-    
 }
-
 
 /*-------------Pagination-*/
 .pagination {
@@ -117,9 +122,11 @@ div.card{
     text-decoration: none; 
     border:1px solid black; 
 } 
+
 .pagination a.active { 
     background-color:#80c9c0; 
 } 
+
 .pagination a:hover:not(.active) { 
     background-color: #d4d5d2; 
 } 
@@ -153,8 +160,8 @@ footer{
 
 
 /*-------------Media Queries-*/
-
-@media screen and (max-width: 320px){
+/*On screens that are 360px or less*/
+@media screen and (max-width: 360px){
     
     .image_style{
         display: block; 
@@ -164,11 +171,60 @@ footer{
         height:130px;
         padding-top:15px;
     }
-
+    .carousel a img
+    {
+        width:600px;
+        height:900px;
+    }
+    div.card{
+    min-height:500px;
+    }
 }
+
+/*On screens that are 768px or less*/
+@media screen and (max-width: 768px){
+    .navbar-dark .navbar-brand{
+        font-family: 'Mountains of Christmas', cursive;
+        font-size: 20px;
+        text-shadow: 4px 4px 4px #aaa;
+    }
+
+    div.card{
+        min-height:580px;
+    }
+    
+    #footer-details h6,
+    #footer-details a i{
+        text-align: center;
+    }
+    
+    #footer-details form input::-webkit-input-placeholder {
+       font-size: 12px;
+       line-height: 4;
+    }
+    
+    .image_style{
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+        width:190px; 
+        height:200px;
+        padding-top:15px;
+    }
+    
+    .mainforminput::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+        font-family: 'Mountains of Christmas', cursive;
+        opacity: 1; /* Firefox */
+        font-size:15px;
+    }
+    .pagination {
+    display: inline-block;
+    text-align: center;
+    }
+}
+
+/*On screens that are 1250px or less*/
 @media screen and (max-width: 1250px){
-    
-    
     .image_style{
         display: block; 
         margin-left: auto;
@@ -180,48 +236,7 @@ footer{
     
     div.card{
     min-height:500px;
+    }
 }
 
-
-}
-
-@media screen and (max-width: 768px){
-        .navbar-dark .navbar-brand{
-        font-family: 'Mountains of Christmas', cursive;
-        font-size: 20px;
-        text-shadow: 4px 4px 4px #aaa;
-    }
-
-    div.card{
-        min-height:580px;
-    }
-    #footer-details h6,
-    #footer-details a i{
-        text-align: center;
-    }
-    #footer-details form input::-webkit-input-placeholder {
-       font-size: 12px;
-       line-height: 4;
-    }
-    
-    
-    .image_style{
-        display: block; 
-        margin-left: auto;
-        margin-right: auto;
-        width:170px; 
-        height:200px;
-        padding-top:15px;
-    }
-    .mainforminput::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
-        font-family: 'Mountains of Christmas', cursive;
-        opacity: 1; /* Firefox */
-        font-size:15px;
-    }
-    .pagination {
-    display: inline-block;
-    text-align: center;
-}
-
-}
 

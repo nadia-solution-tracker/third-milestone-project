@@ -3,7 +3,9 @@
 <!--Header Image-->
   <header id="heading"></header>
   <br/>
-
+<div class="card">
+                         <div class="card-header"><h4 class="text-center">SEARCH A RECIPE</h4></div>
+                        <div class="card-body">
  <form class="form" action="{{url_for('search_recipes')}}"  method="POST">
     <div class="container">
       <div class="row">
@@ -30,7 +32,7 @@
         
         
         <div class="input-field col s12">
-          <i class="material-icons prefix">priority_high</i>
+          <i class="material-icons prefix">local_dining</i>
           <select id="meal_type_filter" name="meal_type_filter">
             <option value="" disabled selected>Select Meal Type</option>
             {% for meal in meals %}
@@ -69,19 +71,25 @@
       </div>
     </div>
   </form>
-      
-
+    </div>
+  </div>
   
+      
+    <h2 class="content">*** OUR  {{filter_text}} RECIPES *** </h2>
+
+    <div class="pagination row justify-content-center">
+    {{ pagination.info }}
+  </div>
   <div class="row">
       {% for recipe in recipes %}
         <div class="col-md-6 col-lg-4">
-          <div class="card"><img src="{{recipe.image_link}}" class="image_style">
+          <div class="card"><img src="{{recipe.image_link}}" class="image_style materialboxed">
             <div class="card-block">
               <h4 class="card-title" id="recipe_name">{{recipe.recipe_name}}</h4>
               <p class="card-text" id="description">{{recipe.short_description}}</p>
             </div>
             <div class="card-action">
-              <a href="/view_recipe/{{ recipe._id }}">View Recipe</a>
+              <a href="/view_recipe/{{ recipe._id }}" class="btn btn-primary btn-sm">View Recipe</a>
               <i class="material-icons">thumb_up</i> {{recipe.upvotes}}
               <i class="material-icons">remove_red_eye</i> {{recipe.views}}
             </div>
@@ -90,6 +98,8 @@
       {% endfor %}
   </div>
   
-
+  <div class="pagination row">
+    {{ pagination.links }}
+  </div>
 {% endblock %}
  

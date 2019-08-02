@@ -1,94 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to Kitchen Station!!!</title>
-    <!--Favicon-->
-     <link rel="shortcut icon" href="{{url_for('static',filename='images/favicon.ico')}}" type="image/x-icon" />
-    <!--Materialise CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/small-business.css')}}" type="text/css"/>
-    <link rel="stylesheet" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" type="text/css"/>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" type="text/css"/>
-    <!--Stylesheet for fonts-->
-	  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
-	  <!--Stylesheet for icons-->
-	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-</head>
-<body>
-    <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-background">
-        <div class="container">
-          <a class="navbar-brand landing-title" href="{{url_for('index')}}">KITCHEN STATION</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"  aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="{{url_for('index')}}">Home
-                  <span class="sr-only">(current)</span>
-                </a>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Welcome to Kitchen Station!!!</title>
+      <!--Favicon-->
+       <link rel="shortcut icon" href="{{url_for('static',filename='images/favicon.ico')}}" type="image/x-icon" />
+      <!--Materialise CSS-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/small-business.css')}}" type="text/css"/>
+      <link rel="stylesheet" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" type="text/css"/>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" type="text/css"/>
+      <!--Stylesheet for fonts-->
+  	  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  	  <!--Stylesheet for icons-->
+  	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+  </head>
+  <body>
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-background">
+      <div class="container">
+        <a class="navbar-brand landing-title" href="{{url_for('index')}}">KITCHEN STATION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"  aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('index')}}">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
+            </li>
+            {% if 'user_name' not in session %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('login')}}">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
+                <a class="nav-link" href="{{url_for('register')}}">Register</a>
               </li>
-              {% if 'user_name' not in session %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{{url_for('login')}}">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{url_for('register')}}">Register</a>
-                </li>
-              {% else %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('user_recipes')}}">My Recipes</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
-                  </li>
-              {% endif %}
-            </ul>
-          </div>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('user_recipes')}}">My Recipes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+              </li>
+            {% endif %}
+          </ul>
         </div>
+      </div>
     </nav>
-
-
   
     <!-- Page Content -->
     <div class="container">
-        {% block content %}
-        {% endblock %} 
+      {% block content %}
+      {% endblock %} 
     </div>
-    
-
-    <!-- /.container -->
+      
     <!-- Footer -->
     <footer class="py-5">
       <div class="container-fluid">
-       <div id="footer-details" class="row">
-            <div class="col-sm-6">
-                <a target="_blank" href="https://github.com/nadia-solution-tracker/third-milestone-project"><i class="fa fa-github"></i></a>            
-            </div>
-            <div class="col-sm-6">
-                <form class="form" action="{{url_for('search_recipes')}}"  method="POST">
-                  <input class="form-control inline-block" type="search" id="search_item"  name="search_item" placeholder="Search Recipes,Ingredients or Keywords" aria-label="Search">
-                </form><br/>
-                <h6 class="inline-block text-white">
-                       &copy;2019 Nadia Barreto <br/>
-                       A CODE INSITITUTE MILESTONE PROJECT
-                </h6>
-            </div>
+        <div id="footer-details" class="row">
+          <div class="col-sm-6">
+            <a target="_blank" href="https://github.com/nadia-solution-tracker/third-milestone-project"><i class="fa fa-github"></i></a>            
+          </div>
+          <div class="col-sm-6">
+            <form class="form" action="{{url_for('search_recipes')}}"  method="POST">
+              <input class="form-control inline-block" type="search" id="search_item"  name="search_item" placeholder="Search Recipes,Ingredients or Keywords" aria-label="Search">
+            </form><br/>
+            <h6 class="inline-block text-white">
+               &copy;2019 Nadia Barreto <br/>
+               A CODE INSITITUTE MILESTONE PROJECT
+            </h6>
         </div>
+      </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
+  
+   <!-- Bootstrap core JavaScript -->
     <script src="static/vendor/jquery/jquery.min.js"></script>
     <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename= 'js/clean-blog.min.js') }}"></script>
@@ -109,31 +105,28 @@
             width: 0,
             top: '2em',
             left: '3em'
-        });
-         $('.materialboxed').materialbox();
-         $('.carousel').carousel();
-          setInterval(function() {
- 
+          });
+        $('.materialboxed').materialbox();
+        $('.carousel').carousel();
+            setInterval(function() {
         $('.carousel').carousel('next');
- 
-        }, 3500);   
- 
-        $('.modal').modal();
+          }, 3500);   
+        $('#modal1').modal();
+       
         
-      });
-      //code for timepicker
-      //https://github.com/chingyawhao/materialize-clockpicker
-      $('.timepicker').pickatime({
-          default: 'now',
-          twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
-          donetext: 'OK',
-          autoclose: false,
-          vibrate: true // vibrate the device when dragging clock hand
-      });
-      $(document).on("mousedown", ".timepicker", function(event){
-          event.preventDefault();
-      });
-     
-    </script>
-</body>
+          });
+        //code for timepicker
+        //https://github.com/chingyawhao/materialize-clockpicker
+        $('.timepicker').pickatime({
+            default: 'now',
+            twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
+            donetext: 'OK',
+            autoclose: false,
+            vibrate: true // vibrate the device when dragging clock hand
+          });
+        $(document).on("mousedown", ".timepicker", function(event){
+            event.preventDefault();
+          });
+      </script>
+  </body>
 </html>

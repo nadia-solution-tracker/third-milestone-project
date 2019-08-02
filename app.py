@@ -206,13 +206,29 @@ def increase_upvotes(recipe_id):
   
 @app.route("/most_popular_recipes")
 def most_popular_recipes():
-   popular_recipes=mongo.db.recipes.find({'$query':{},'$orderby':{'upvotes':-1}})
-   return render_template("orderingrecipes.html",recipes=popular_recipes,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find())
+    filter_recipes = mongo.db.recipes.find(
+        {"upvotes": {"$gt": -1}}).sort([("upvotes", -1)])
+    page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
+    total_filter_recipes= filter_recipes.count()
+    recipes_fetched= filter_recipes.skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+    pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total_filter_recipes,record_name='Recipes')
+    return render_template("orderingrecipes.html",recipes=recipes_fetched,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find(),
+                            page=page,
+                            per_page=per_page,
+                            pagination=pagination,filter_text="POPULAR")
     
 @app.route("/most_viewed_recipes")
 def most_viewed_recipes():
-    viewed_recipes=mongo.db.recipes.find({'$query':{},'$orderby':{'votes':-1}})
-    return render_template("orderingrecipes.html",recipes=viewed_recipes,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find())
+    filter_recipes = mongo.db.recipes.find(
+        {"views": {"$gt": -1}}).sort([("views", -1)])
+    page, per_page, offset = get_page_args(page_parameter='page',per_page_parameter='per_page')
+    total_filter_recipes= filter_recipes.count()
+    recipes_fetched= filter_recipes.skip((page - 1)*ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+    pagination = Pagination(page=page,per_page=ITEMS_PER_PAGE,total=total_filter_recipes,record_name='Recipes')
+    return render_template("orderingrecipes.html",recipes=recipes_fetched,cuisines=mongo.db.cuisines.find(),allergens=mongo.db.allergens.find(),
+                            page=page,
+                            per_page=per_page,
+                            pagination=pagination,filter_text="MOST VIEWED")
   
     
 @app.route('/edit_recipe/<recipe_id>')
