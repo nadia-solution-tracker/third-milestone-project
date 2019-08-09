@@ -85,16 +85,9 @@ div.card{
     border-color: #285e8e;
 }
 
-#modal.modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-    display: none;
+#modal1.modal{
     width: 50% !important;
     height: 30% !important;
-    overflow: hidden;
-    outline: 0;
 }
 
 /*-------------Images-*/

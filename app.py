@@ -265,6 +265,17 @@ def delete_recipe(recipe_id):
     recipe=mongo.db.recipes.remove({"_id":ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
+
+#https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
+@app.errorhandler(404) 
+# inbuilt function which takes error as parameter 
+def not_found(e):
+# defining function 
+  return render_template("404.html") 
+  
+@app.errorhandler(500)
+def internal_error(error):
+    return "500 error"
    
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),
