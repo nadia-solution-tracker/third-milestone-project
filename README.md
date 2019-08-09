@@ -1,12 +1,14 @@
 # [KITCHEN STATION COOKING APP](https://kitchen-station.herokuapp.com/)
 
-**Overview of the project**
+#### Overview of the project
 
 - Kitchen Station share the highlights, discoveries and the recipes of the food you love to cook. With this easy-to-use recipe creation application, you can add / edit / delete /view your recipes, ideas and photos in minutes. 
 - Kitchen Station offers large database of recipes that are made by different cooking experts, chefs and simply housewives who loves to cook and like to experiment new dishes every day. The app offers best and large categories of recipes.
 
+![IMAGE](static/images/homepagesnapshot.jpg)
+
 ## UX
-**Insights of the project**
+#### Insights of the project
 - Registering yourself to the application to access all the features of the app.
 - Login to create and edit recipes for the world to see.
 - Create your own recipe and save it.
@@ -18,7 +20,7 @@
 - Social community to share recipes and inspire others.
 - Gain confidence in their cooking abilities
 
-**User Stories**
+#### User Stories
 
 **"Kate loves cooking and wants to share her own personal recipes to the world"**
 - As a user, who wants to create an account Kate can register into the application by clicking the Register link on the navigation menu at the top, this will bring Kate a user entry form which when complete creates a new user account for Kate and presents additional features of the application
@@ -36,18 +38,18 @@
 
 As a user who is browsing through the web application he/she can also click on images provided in the recipe card to see a zoomed in image of the recipe.
 
-###### Design Process
+#### Design Process
 
-[Schema diagram]()<br/>
+[Schema diagram](https://www.dropbox.com/sh/mhe9ef9eevfb536/AAB9BvERCM2JlNUQuhLKDavta?dl=0)<br/>
 - While working on the application new features and changes were implemented on the design of the wireframe
-[Wireframes for Desktop]()<br/>
-[Wireframes for IPhone]()<br/>
-[Wireframes for IPad]()<br/>
+[Wireframes for Desktop](https://www.dropbox.com/sh/p5v46s3obnoddtc/AACUqugEnEjXy9dlTMVsDK7Fa?dl=0)<br/>
+[Wireframes for IPhone](https://www.dropbox.com/sh/zwvda3088wef633/AABq133OKwyu9Iegan9Etke6a?dl=0)<br/>
+[Wireframes for IPad](https://www.dropbox.com/sh/6nywq8sldsm1ewv/AAA903PRicdp6xeNwA5No1M0a?dl=0)<br/>
 
 
 ## Features
 
-###### Existing Features
+#### Existing Features
 
 The following features are added to the application which is geared towards enhancing the user online experience.  This multipage application provides a menu to access the various features of the application
 
@@ -151,7 +153,7 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 
 *Page created:* viewrecipe.html
 
-###### Features Left to Implement
+#### Features Left to Implement
 - An advanced search on more aspects and criteria’s this might require me to change the recipe collection in the mongodb.
 - Adding reviews on recipes so users are able to explore the recipe a bit more and building connections with other cooks.
 - Creating a more dynamic input adder/remover button for ingredients and method so that user can step by step instructions by clicking on add button
@@ -217,7 +219,7 @@ Schema: https://www.draw.io/<br/>
 - Web application is also been viewed on different browsers like Google Chrome,Firefox and Internet Edge
 - Tested button and links directed to desired page.
 
-**Testing scenarios**
+#### Testing scenarios
 
 **Home(index.html)**–*"Test PASS"*
 
@@ -257,6 +259,7 @@ Test cases Example have been checked for each of the drop down,
 - Tested the link to open Login page
 - Verified error message on the form when the mandatory fields were left blank. 
 - Verified for invalid user name and password
+- 
 ![IMAGE](static/images/login.jpg)
 
 ![IMAGE](static/images/successfullogin.jpg)
@@ -317,7 +320,7 @@ When a user...
 
 - Project is built on AWS Cloud 9 <link>(https://aws.amazon.com/cloud9/)
 
-**Running code locally**
+#### Running code locally
 
 - Create an app.py file within your Python application and enter the following code snippet as an example:
 
@@ -341,7 +344,7 @@ if __name__ == '__main__':
 Click on Open->**Preview in Browser window**
 - Now you can access your Flask application 
 
-**Git deployment**
+#### Git deployment
 The files have been edited in this development instance. When ready, the changes were "deployed" to the staging instance. After user acceptance and testing, deploy again, this time to production. I used git and GitHub pages for deployment.
 The following steps are followed to deploy the pages:
 1.	Initialised the local directory in my project as a git repository used the cloud9 terminal to perform this step `$git init`
@@ -352,7 +355,7 @@ The following steps are followed to deploy the pages:
 5.	On major changes I have pushed the changes in the local repository to GitHub. `$git push origin master`
 Github Link: <link>(https://github.com/nadia-solution-tracker/third-milestone-project)
 
-**Heroku deployment Steps**
+#### Heroku deployment Steps
 
 1.	Create our Heroku app on <link>(https://www.heroku.com/)
 2.	Link our local Git repository with Heroku.<br/>
@@ -376,6 +379,7 @@ Github Link: <link>(https://github.com/nadia-solution-tracker/third-milestone-pr
 
 Config Variable added to Heroku are as follows
 
+![IMAGE](static/images/herokuconfigvar.jpg)
 
 - To finally deploy any changes in the project
 `~/workspace (master) $ git push -u heroku master`
