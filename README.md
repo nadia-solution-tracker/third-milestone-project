@@ -5,7 +5,7 @@
 - Kitchen Station share the highlights, discoveries and the recipes of the food you love to cook. With this easy-to-use recipe creation application, you can add / edit / delete /view your recipes, ideas and photos in minutes. 
 - Kitchen Station offers large database of recipes that are made by different cooking experts, chefs and simply housewives who loves to cook and like to experiment new dishes every day. The app offers best and large categories of recipes.
 
-##UX
+## UX
 **Insights of the project**
 - Registering yourself to the application to access all the features of the app.
 - Login to create and edit recipes for the world to see.
@@ -36,17 +36,18 @@
 
 As a user who is browsing through the web application he/she can also click on images provided in the recipe card to see a zoomed in image of the recipe.
 
-**Design Process**
+###### Design Process
 
-[Schema diagram]()
-[Wireframes for Desktop]()
-[Wireframes for IPhone]()
-[Wireframes for IPad]()
+[Schema diagram]()<br/>
+- While working on the application new features and changes were implemented on the design of the wireframe
+[Wireframes for Desktop]()<br/>
+[Wireframes for IPhone]()<br/>
+[Wireframes for IPad]()<br/>
 
 
-##Features
+## Features
 
-**Existing Features**
+###### Existing Features
 
 The following features are added to the application which is geared towards enhancing the user online experience.  This multipage application provides a menu to access the various features of the application
 
@@ -68,7 +69,7 @@ The following features are added to the application which is geared towards enha
 - The new user can also view all the recipes store in the database either by clicking the “Recipe” link on the menu or the “View all Recipes” button on the home page.
 - Clicking on the Logout initiates a session time out and the user lands again on the home page with the additional features removed
 
-*Pages created *–register.html
+*Pages created:*–register.html
 
 **Login** – this creates an entry for returning users with existing accounts to manage their recipes
 - Provide a link to “ Sigin up “ if the user has not yet logged in
@@ -78,7 +79,7 @@ The following features are added to the application which is geared towards enha
 - The new user can also view all the recipes store in the database either by clicking the “Recipe” link on the menu or the “View all Recipes” button on the home page.
 - Clicking on the Logout initiates a session time out and the user lands again on the home page with the additional features removed
 
-*Pages created*-login.html
+*Pages created:*-login.html
 
 **Recipes**- this page displays a wide collection of recipes creates by different cooking experts, chefs, simply housewives and users.
 
@@ -94,7 +95,7 @@ The recipe collection section
 - Each recipe card has link to View recipe (details about the recipe), number of likes and number of views. This would also help users to browse a recipe that is most liked by people or have most views.
 - Clicking any card images of the recipe opens up the image to have a better view of the dish
 
-*Pages created*-recipes.html
+*Pages created:*-recipes.html
 
 **Searched Recipes** – this page displays list of recipes based on filtered criteria
 - Provides users with recipe cards of recipes based on search criteria
@@ -104,13 +105,13 @@ The recipe collection section
 - Pagination feature is incorporated so that users do not get lost and can concentrate on a particular amount of content, the page display 6 recipes at each time. 
 - The user can view the list of next 6 recipes by clicking on the pagination links provided at the bottom of the page.
 
-*Pages created*-search.html
+*Pages created:*-search.html
 
 **Ordering Recipes**- Provides ordering of recipes 
 - Users are able to view an ordering of recipes based on “Most popular" and "Most Viewed”
 - This page has a same layout as the search Recipe page.
 
-*Pages created*-orderingrecipes.html 
+*Pages created:*-orderingrecipes.html 
 
 **Add Recipe**- This page provides a kind of an editor for users to write recipes. 
 
@@ -123,20 +124,20 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 - Placeholders are provided with instructions for ingredients and method so that the user is aware of how they can write the fields.
 - Submitting the recipes added the recipe to the collection of recipes and also to the users account “My Recipes” which provides a kind of a personal cookbook diary for the user with features like Edit and Delete.
 
-*Pages created*-addrecipe.html
+*Pages created:*-addrecipe.html
 
 **My Recipes**- provides a personal cookbook diary for a registered user
 - Displays recipe cards for all recipes created by that user.
 - Provides view ,edit, delete features to every recipe card.
 - Also display pagination info and links on top and bottom of the page respectively to improve the readability score of the content.
 
-*Pages created*-userrecipes.html
+*Pages created:*-userrecipes.html
 
 **Edit Recipe**- editing to add and improve on your data
 - Provide a form similar to the Add recipe form but in this case the user recipe collection is accessed for a particular item that needs to be edited
 - Upon clicking submit, the recipe is updated and doesn’t add a new recipe into the database.
 
-*Pages created-*editrecipe.html
+*Pages created:*-editrecipe.html
 
 
 **Delete Recipe**- removes the recipe from the user’s collection of recipes as well as the recipe database
@@ -150,16 +151,16 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 
 *Page created:* viewrecipe.html
 
-**Features Left to Implement**
+###### Features Left to Implement
 - An advanced search on more aspects and criteria’s this might require me to change the recipe collection in the mongodb.
 - Adding reviews on recipes so users are able to explore the recipe a bit more and building connections with other cooks.
 - Creating a more dynamic input adder/remover button for ingredients and method so that user can step by step instructions by clicking on add button
 
-<image></image>
+![IMAGE](static/images/dynamicadder.jpg)
 
 - Responsive Charts - Use the dc.js library I may add  where on clicking each bar it would drill down into other bar chart results to compare data.
 
-##Technologies Used
+## Technologies Used
 **Python 3**
 - Backend Language for creating web applications.
 - To determine what content to show a user and what actions to take.
@@ -190,17 +191,17 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 - Used to enable Materialize functionality, including select forms, sidenavs, character counter, and tabs
 
 
-**HTML5** : to create structure of webpage. 
-**CSS3**: to style webpage, I used external stylesheet, file located in static/css/styles.css .
-**Google Fonts**: for additional font-family options https://fonts.google.com/.
-**Font Awesome**: for social media icons and envelope icon https://fontawesome.com/.
-**Start Bootstrap**: Bootstrap starter template perfect for building websites https://startbootstrap.com/templates/small-business/
+**HTML5** : to create structure of webpage.<br/>
+**CSS3**: to style webpage, I used external stylesheet, file located in static/css/styles.css .<br/>
+**Google Fonts**: for additional font-family options https://fonts.google.com/.<br/>
+**Font Awesome**: for social media icons and envelope icon https://fontawesome.com/.<br/>
+**Start Bootstrap**: Bootstrap starter template perfect for building websites https://startbootstrap.com/templates/small-business/<br/>
 
 
-**Online software for drawing Wireframes and Schema Design**
-Wireframe : https://wireframepro.mockflow.com
-Wireframe :https://ninjamock.com/Designer/Workplace
-Schema: https://www.draw.io/
+**Online software for drawing Wireframes and Schema Design**<br/>
+Wireframe : https://wireframepro.mockflow.com<br/>
+Wireframe :https://ninjamock.com/Designer/Workplace<br/>
+Schema: https://www.draw.io/<br/>
 
 **Installs made to the project**
 
@@ -211,7 +212,7 @@ Schema: https://www.draw.io/
 - `~/workspace $ pip3 install flask-bcrypt `
 
 
-###Testing
+## Testing
 - The web application has been tested to make it responsive this is tested in Google Chrome Developer tools responsive mode on Galaxy S5, Pixel 2, Pixel 2XL,iPhone 5/SE, iPhone 6/7/8, iPhone Plus 6/7/8, iPhone X, iPad, iPad Pro.
 - Web application is also been viewed on different browsers like Google Chrome,Firefox and Internet Edge
 - Tested button and links directed to desired page.
@@ -237,15 +238,17 @@ Schema: https://www.draw.io/
 - Upon loading the recipes search page, I am also given the option of using 3 inputs variations for searching, i.e. ‘Cuisine', and 'Allergen' and ‘Meal Types’. When user clicks the down arrow which is displayed near to the menu, the drop-down will be dropped down and will list all the choices below. So in order to select the down most items, there will option for users to scroll down. On make a selection and clicking the filter recipes  button the user is directed to a page that displays the recipes based on the search criteria
 Test cases Example have been checked for each of the drop down,
 
-Cuisine  | Allergen | Meal Type | Records Fetched
-------------- | -------------
-Chinese  |	None | Lunch | 1
-Chinese  | None |	|2
-Chinese | | Snack | 1
- | Milk | Lunch | 1
-American | | | 5
- | Milk | | 5
- | | Dessert |1
+
+| Cuisine        | Allergen                  | Meal Type           |   Records Fetched
+| ------------- | ----------------------- | ----------------------- |
+| Chinese      | None |  Lunch |    1
+| Chinese     |  | Snack |  1
+|       | Milk  | Lunch |   1
+| American    |  |  |   5   
+|    | Milk  |  | 5
+|    |  | Dessert  | 1
+
+
  - The textfield to search for recipes is also tested for keywords, recipe names and ingredients, and redirects me  based on the desired search criteria 
  - The ordering buttons, order the recipe cards based on the ordering aspects. 
  - All links in Pagination work as desired displaying 6 recipe cards at each click.
@@ -253,13 +256,19 @@ American | | | 5
 **Login(login.html)** –*"Test PASS"*
 - Tested the link to open Login page
 - Verified error message on the form when the mandatory fields were left blank. 
-- Verified for invalid user name and password-
+- Verified for invalid user name and password
+![IMAGE](static/images/login.jpg)
+
+![IMAGE](static/images/successfullogin.jpg)
+
 - For all user the navigation bar is displayed as follows
 
+![IMAGE](static/images/navforallusers.jpg)
 
 
 - Successful login opens up navigation bar with more features
 
+![IMAGE](static/images/navforallvalidusers.jpg)
 
 **Register(register.html)**  –*"Test PASS"*
 -  Tested the link to open Register page
@@ -304,7 +313,7 @@ When a user...
 - Upvotes a recipe, it increments the recipe upvotes section of the recipe
 - Deletes a recipe, it removes the recipe data from the recipes collection
 
-###Deployment
+## Deployment
 
 - Project is built on AWS Cloud 9 <link>(https://aws.amazon.com/cloud9/)
 
@@ -346,24 +355,24 @@ Github Link: <link>(https://github.com/nadia-solution-tracker/third-milestone-pr
 **Heroku deployment Steps**
 
 1.	Create our Heroku app on <link>(https://www.heroku.com/)
-2.	Link our local Git repository with Heroku.
-`~/workspace $ git status`
-`~/workspace $ git init`
-`~/workspace (master) $ git add .`
-`~/workspace (master) $ git commit -m "Initial Commit"`
-`~/workspace (master) $ git remote  add heroku https://git.heroku.com/<your-app-name>.git`
-`~/workspace (master) $ git remote –v`
-`~/workspace (master) $ git push -u heroku master`
-3.	Create a **requirements.txt** file, which will install the dependencies for our project and tell Heroku that we're using Python.
-`~/workspace (master) $ sudo pip3 freeze --local > requirements.txt`
-`~/workspace (master) $ git add requirements.txt`
-`~/workspace (master) $ git commit -m "requirements file step 3"`
-`~/workspace (master) $ git push -u heroku master`
-4.	Create a **Procfile**.
-`~/workspace (master) $ echo web: python run.py > Procfile`
-`~/workspace (master) $ git add Procfile`
-`~/workspace (master) $ git commit -m "Add Procfile"`
-`~/workspace (master) $ heroku ps:scale web=1`
+2.	Link our local Git repository with Heroku.<br/>
+`~/workspace $ git status`<br/>
+`~/workspace $ git init`<br/>
+`~/workspace (master) $ git add .`<br/>
+`~/workspace (master) $ git commit -m "Initial Commit"`<br/>
+`~/workspace (master) $ git remote  add heroku https://git.heroku.com/<your-app-name>.git`<br/>
+`~/workspace (master) $ git remote –v`<br/>
+`~/workspace (master) $ git push -u heroku master`<br/>
+3.	Create a **requirements.txt** file, which will install the dependencies for our project and tell Heroku that we're using Python.<br/>
+`~/workspace (master) $ sudo pip3 freeze --local > requirements.txt`<br/>
+`~/workspace (master) $ git add requirements.txt`<br/>
+`~/workspace (master) $ git commit -m "requirements file step 3"`<br/>
+`~/workspace (master) $ git push -u heroku master`<br/>
+4.	Create a **Procfile**.<br/>
+`~/workspace (master) $ echo web: python run.py > Procfile`<br/>
+`~/workspace (master) $ git add Procfile`<br/>
+`~/workspace (master) $ git commit -m "Add Procfile"`<br/>
+`~/workspace (master) $ heroku ps:scale web=1`<br/>
 
 Config Variable added to Heroku are as follows
 
@@ -373,7 +382,7 @@ Config Variable added to Heroku are as follows
 
 Heroku Link to final Project: <link>(https://kitchen-station.herokuapp.com/)
 
-###Credits
+## Credits
 
 Content
 - Cuisine List taken from - https://www.bbcgoodfood.com/recipes/category/cuisines
@@ -392,14 +401,14 @@ Images and Recipes
 Bugs and Solutions
 -	Deploying application on Heroku was giving me errors “Application error” 
 Solved this issue by pushing the requirements file everytime new installs were made and commiting the changes.
-Also had to create a “Config Vars” to access the mongodb
+Also had to create a “Config Vars” to access the mongodb <br/>
 ~/environment (master) $ heroku config:set MONGO_URI=mongodb+srv://root:password@myfirstcluster-gtkhp.mongodb.net/test?retryWrites=true
 ~/environment (master) $ heroku config
 
 -	When clicking the preparation time and cooking time field , the clock modal opens and immediately close. I referred the following link to get it working:
-https://stackoverflow.com/questions/44368205/set-time-format-hhmmss-for-materialize-clockpicker/44782163#44782163
+<br/>https://stackoverflow.com/questions/44368205/set-time-format-hhmmss-for-materialize-clockpicker/44782163#44782163
 - To output a comma delimited list in the viewrecipe.html page 
-https://stackoverflow.com/questions/11974318/how-to-output-a-comma-delimited-list-in-jinja-python-template-
+<br/>https://stackoverflow.com/questions/11974318/how-to-output-a-comma-delimited-list-in-jinja-python-template-
 
-###Acknowledgements
+## Acknowledgements
 I would extend my sincere thanks to my mentor for giving me ideas and code snippets on optimizing my webpage. However all the work was done by me with references made to links as mentioned in "Credits" and referring "Code Institute UX Design" videos.I also took inspiration from the Mini Project "Thorin and company" and "Task Manager" from Code institute.
