@@ -1,6 +1,6 @@
 # [KITCHEN STATION COOKING APP](https://kitchen-station.herokuapp.com/)
 
-#### Overview of the project
+### Overview of the project
 
 - Kitchen Station share the highlights, discoveries and the recipes of the food you love to cook. With this easy-to-use recipe creation application, you can add / edit / delete /view your recipes, ideas and photos in minutes. 
 - Kitchen Station offers large database of recipes that are made by different cooking experts, chefs and simply housewives who loves to cook and like to experiment new dishes every day. The app offers best and large categories of recipes.
@@ -8,7 +8,7 @@
 ![IMAGE](static/images/homepagesnapshot.jpg)
 
 ## UX
-#### Insights of the project
+### Insights of the project
 - Registering yourself to the application to access all the features of the app.
 - Login to create and edit recipes for the world to see.
 - Create your own recipe and save it.
@@ -41,7 +41,7 @@ As a user who is browsing through the web application he/she can also click on i
 #### Design Process
 
 [Schema diagram](https://www.dropbox.com/sh/mhe9ef9eevfb536/AAB9BvERCM2JlNUQuhLKDavta?dl=0)<br/>
-- While working on the application new features and changes were implemented on the design of the wireframe
+While working on the application new features and changes were implemented on the design of the wireframe<br/>
 [Wireframes for Desktop](https://www.dropbox.com/sh/p5v46s3obnoddtc/AACUqugEnEjXy9dlTMVsDK7Fa?dl=0)<br/>
 [Wireframes for IPhone](https://www.dropbox.com/sh/zwvda3088wef633/AABq133OKwyu9Iegan9Etke6a?dl=0)<br/>
 [Wireframes for IPad](https://www.dropbox.com/sh/6nywq8sldsm1ewv/AAA903PRicdp6xeNwA5No1M0a?dl=0)<br/>

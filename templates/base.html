@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Welcome to Kitchen Station!!!</title>
-      <!--Favicon-->
-       <link rel="shortcut icon" href="{{url_for('static',filename='images/favicon.ico')}}" type="image/x-icon" />
-      <!--Import materialize.css-->
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-      <link rel="stylesheet" href="{{url_for('static',filename='css/small-business.css')}}" type="text/css"/>
-      <link rel="stylesheet" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" type="text/css"/>
-      <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" type="text/css"/>
-      <!--Stylesheet for fonts-->
-  	  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
-  	  <!--Import Google Icon Font-->
-  	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Kitchen Station!!!</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/favicon.ico')}}" type="image/x-icon" />
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/small-business.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" type="text/css"/>
+    <!--Stylesheet for fonts-->
+  	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  	<!--Import Google Icon Font-->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
   </head>
   <body>
-      <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-background">
       <div class="container">
         <a class="navbar-brand landing-title" href="{{url_for('index')}}">KITCHEN STATION</a>
@@ -81,15 +81,16 @@
                &copy;2019 Nadia Barreto <br/>
                A CODE INSITITUTE MILESTONE PROJECT
             </h6>
+          </div>
         </div>
       </div>
     </footer>
   
-   <!-- Bootstrap core JavaScript -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="static/vendor/jquery/jquery.min.js"></script>
     <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-     <!-- Compiled and minified JavaScript -->
+    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
       $(document).ready(function(){
@@ -109,14 +110,9 @@
         $('.materialboxed').materialbox();
         $('.carousel').carousel();
             setInterval(function() {
-        $('.carousel').carousel('next');
-          }, 3500);   
+              $('.carousel').carousel('next');
+              }, 3500);   
         $('.modal').modal();
-       
-        
-          });
-        //code for timepicker
-        //https://github.com/chingyawhao/materialize-clockpicker
         $('.timepicker').pickatime({
             default: 'now',
             twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
@@ -124,9 +120,13 @@
             autoclose: false,
             vibrate: true // vibrate the device when dragging clock hand
           });
-        $(document).on("mousedown", ".timepicker", function(event){
+      });
+        //code for timepicker
+        //https://github.com/chingyawhao/materialize-clockpicker
+        
+      $(document).on("mousedown", ".timepicker", function(event){
             event.preventDefault();
-          });
+      });
       </script>
   </body>
 </html>
