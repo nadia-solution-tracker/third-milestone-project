@@ -83,7 +83,7 @@ The following features are added to the application which is geared towards enha
 - Clicking the login on the menu, directs the user to an input form to enter login details like username and password
 - The Login form provides validations for fields that are required and also checks if login is successful
 - Signing in the form creates opens the home page and clickable menu which now includes additional features Home, Recipes, Add Recipes ,My Recipes(Personal cookbook diary),Logout
-- The new user can also view all the recipes store in the database either by clicking the **=Recipe** link on the menu or the **View all Recipes** button on the home page.
+- The new user can also view all the recipes store in the database either by clicking the **Recipe** link on the menu or the **View all Recipes** button on the home page.
 - Clicking on the Logout initiates a session time out and the user lands again on the home page with the additional features removed
 
 *Pages created:*-login.html
@@ -248,14 +248,14 @@ Schema: https://www.draw.io/<br/>
 Test cases Example have been checked for each of the drop down,
 
 
-| Cuisine        | Allergen                  | Meal Type           |   Records Fetched<br/>
-| ------------- | ----------------------- | ----------------------- |<br/>
-| Chinese      | None |  Lunch |    1
-| Chinese     |  | Snack |  1
-|       | Milk  | Lunch |   1
-| American    |  |  |   5   
-|    | Milk  |  | 5
-|    |  | Dessert  | 1
+| Cuisine &nbsp; &nbsp; | Allergen &nbsp; &nbsp; | Meal Type  &nbsp; &nbsp; |   Records Fetched<br/>
+| ----------------------| ---------------------- | ----------------------- | ----------------------- |<br/>
+| Chinese &nbsp; &nbsp; | None &nbsp; &nbsp;|  Lunch &nbsp; &nbsp; |    1 &nbsp; &nbsp;
+| Chinese &nbsp; &nbsp; | &nbsp; &nbsp; | Snack &nbsp; &nbsp; |  1 &nbsp; &nbsp;
+|  &nbsp; &nbsp;  | Milk &nbsp; &nbsp; | Lunch &nbsp; &nbsp; |   1 &nbsp; &nbsp;
+| American &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; |   5   &nbsp; &nbsp;
+| &nbsp; &nbsp;    | Milk &nbsp; &nbsp;  | &nbsp; &nbsp;  | 5	&nbsp; &nbsp;
+|  &nbsp; &nbsp;  | &nbsp; &nbsp;  | Dessert &nbsp; &nbsp; | 1 &nbsp; &nbsp;
 
 
  - The textfield to search for recipes is also tested for keywords, recipe names and ingredients, and redirects me  based on the desired search criteria 
