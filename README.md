@@ -245,17 +245,10 @@ Schema: https://www.draw.io/<br/>
 - Clicking the “Recipes” link takes me to a new webpage. 
 - This responsive webpage has a layout with navigation and header image. The header image is made responsive this is achieved using VH (percent of view height) units.
 - Upon loading the recipes search page, I am also given the option of using 3 inputs variations for searching, i.e. ‘Cuisine', and 'Allergen' and ‘Meal Types’. When user clicks the down arrow which is displayed near to the menu, the drop-down will be dropped down and will list all the choices below. So in order to select the down most items, there will option for users to scroll down. On make a selection and clicking the filter recipes  button the user is directed to a page that displays the recipes based on the search criteria
+
 Test cases Example have been checked for each of the drop down,
 
-
-| Cuisine &nbsp; &nbsp;&nbsp; &nbsp; | Allergen &nbsp; &nbsp;&nbsp; &nbsp; | Meal Type &nbsp; &nbsp;&nbsp; &nbsp; |   Records Fetched<br/>
-| ----------------------| ---------------------- | ----------------------- | ----------------------- |<br/>
-| Chinese &nbsp; &nbsp;&nbsp; &nbsp; | None &nbsp; &nbsp;&nbsp; &nbsp;|  Lunch &nbsp; &nbsp;&nbsp; &nbsp; |    1 &nbsp; &nbsp;&nbsp; &nbsp;<br/>
-| Chinese &nbsp; &nbsp;&nbsp; &nbsp; | &nbsp; &nbsp;&nbsp; &nbsp; | Snack &nbsp; &nbsp;&nbsp; &nbsp; |  1 &nbsp; &nbsp;&nbsp; &nbsp;<br/>
-| &nbsp; &nbsp;&nbsp; &nbsp;  | Milk &nbsp; &nbsp;&nbsp; &nbsp; | Lunch &nbsp; &nbsp;&nbsp; &nbsp; |   1 &nbsp; &nbsp;&nbsp; &nbsp;<br/>
-| American &nbsp; &nbsp;&nbsp; &nbsp;| &nbsp; &nbsp;&nbsp; &nbsp; | &nbsp; &nbsp;&nbsp; &nbsp; |   5   &nbsp; &nbsp;&nbsp; &nbsp;<br/>
-| &nbsp; &nbsp;&nbsp; &nbsp;    | Milk &nbsp; &nbsp;&nbsp; &nbsp;  | &nbsp; &nbsp;&nbsp; &nbsp;  | 5	&nbsp; &nbsp;&nbsp; &nbsp;<br/>
-| &nbsp; &nbsp;&nbsp; &nbsp;  | &nbsp; &nbsp;&nbsp; &nbsp;  | Dessert &nbsp; &nbsp;&nbsp; &nbsp; | 1 &nbsp; &nbsp;&nbsp; &nbsp;
+![IMAGE](static/images/TestCases.jpg)
 
 
  - The textfield to search for recipes is also tested for keywords, recipe names and ingredients, and redirects me  based on the desired search criteria 
@@ -283,8 +276,7 @@ Test cases Example have been checked for each of the drop down,
 **Register(register.html)**  –*"Test PASS"*
 -  Tested the link to open Register page
 -  Verified error message on the form when the mandatory fields were left blank. 
--  Verified error message on the form when the mandatory fields were left blank. This
-also included the proper email format (xxx@xx.xxx) on testing.
+-  Verified error message on the form when the mandatory fields were left blank. This also included the proper email format (xxx@xx.xxx) on testing.
 - Verified if same username has been supplied by displaying a message username already exist
 
 **Add recipe(addrecipe.html)** –*"Test PASS"*
@@ -303,11 +295,11 @@ also included the proper email format (xxx@xx.xxx) on testing.
 - Tested for cooking time and preparation time modal time picker pop ups.
 
 **Delete recipe(deleterecipe.html)**–*"Test PASS"*
-- Tested the delete button on the user recipe page,clicking the delete button deletes the recipe from the database.
+- Tested the delete button on the user recipe page,clicking the delete button opens a popup to confirm delete of recipe from the database.
 
 **View recipe(viewrecipe.html)**–*"Test PASS"*
 - Tested all the links and button that direct me to viewing a particular recipe. Link are found on the navigation menu, Buttons are found on the Home page and in individual cards displaying the recipe peek
-- Viewed property gets incremented when a page is viewed and this is tested as the value gets reflected on the recipe page
+- Number of views gets incremented when a page is viewed and this is tested as the value gets reflected on the recipe page
 - Tested the "like" button by clicking the thumbs up increments the total number of likes on that particular recipe
 - Tested that when a user logins in he/she is not able to like his/her own recipe.However user is given the option to like other registered user recipes
 
@@ -316,16 +308,16 @@ Incoperated 404 Error handling in Flask.A 404 Error is showed whenever a page is
 The **app.py** code has been tested for PEP8 requirements/Python code requirments <link>(http://pep8online.com/)
 
 
-
 **Testing of mongodb atlas changes**
 When a user...
 - Registers in the web application a new user entry is created in the users collections
 - Logins verifies the user exists from the user collection
 - Creates a new recipe, adds the recipe to the recipes collection, 
 - Updates a recipe, the recipe values are changed to their updated values.
+- Deletes a recipe, it removes the recipe data from the recipes collection
 - Views individual recipes, it increments the recipe views section of the recipe.
 - Upvotes a recipe, it increments the recipe upvotes section of the recipe
-- Deletes a recipe, it removes the recipe data from the recipes collection
+
 
 ## Deployment
 
@@ -412,7 +404,7 @@ https://stackoverflow.com/questions/11974318/how-to-output-a-comma-delimited-lis
 -  404 Error Handling- https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
 
 Images and Recipes
--	All images and recipes are taken from https://www.bbcgoodfood.com/
+-	All images and recipes are taken from https://www.bbcgoodfood.com/ and Google Images
 
 Bugs and Solutions
 -	Deploying application on Heroku was giving me errors “Application error” 
