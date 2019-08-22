@@ -248,14 +248,14 @@ Schema: https://www.draw.io/<br/>
 Test cases Example have been checked for each of the drop down,
 
 
-| Cuisine &nbsp; &nbsp; | Allergen &nbsp; &nbsp; | Meal Type  &nbsp; &nbsp; |   Records Fetched<br/>
+| Cuisine &nbsp; &nbsp;&nbsp; &nbsp; | Allergen &nbsp; &nbsp;&nbsp; &nbsp; | Meal Type &nbsp; &nbsp;&nbsp; &nbsp; |   Records Fetched<br/>
 | ----------------------| ---------------------- | ----------------------- | ----------------------- |<br/>
-| Chinese &nbsp; &nbsp; | None &nbsp; &nbsp;|  Lunch &nbsp; &nbsp; |    1 &nbsp; &nbsp;
-| Chinese &nbsp; &nbsp; | &nbsp; &nbsp; | Snack &nbsp; &nbsp; |  1 &nbsp; &nbsp;
-|  &nbsp; &nbsp;  | Milk &nbsp; &nbsp; | Lunch &nbsp; &nbsp; |   1 &nbsp; &nbsp;
-| American &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; |   5   &nbsp; &nbsp;
-| &nbsp; &nbsp;    | Milk &nbsp; &nbsp;  | &nbsp; &nbsp;  | 5	&nbsp; &nbsp;
-|  &nbsp; &nbsp;  | &nbsp; &nbsp;  | Dessert &nbsp; &nbsp; | 1 &nbsp; &nbsp;
+| Chinese &nbsp; &nbsp;&nbsp; &nbsp; | None &nbsp; &nbsp;&nbsp; &nbsp;|  Lunch &nbsp; &nbsp;&nbsp; &nbsp; |    1 &nbsp; &nbsp;&nbsp; &nbsp;<br/>
+| Chinese &nbsp; &nbsp;&nbsp; &nbsp; | &nbsp; &nbsp;&nbsp; &nbsp; | Snack &nbsp; &nbsp;&nbsp; &nbsp; |  1 &nbsp; &nbsp;&nbsp; &nbsp;<br/>
+| &nbsp; &nbsp;&nbsp; &nbsp;  | Milk &nbsp; &nbsp;&nbsp; &nbsp; | Lunch &nbsp; &nbsp;&nbsp; &nbsp; |   1 &nbsp; &nbsp;&nbsp; &nbsp;<br/>
+| American &nbsp; &nbsp;&nbsp; &nbsp;| &nbsp; &nbsp;&nbsp; &nbsp; | &nbsp; &nbsp;&nbsp; &nbsp; |   5   &nbsp; &nbsp;&nbsp; &nbsp;<br/>
+| &nbsp; &nbsp;&nbsp; &nbsp;    | Milk &nbsp; &nbsp;&nbsp; &nbsp;  | &nbsp; &nbsp;&nbsp; &nbsp;  | 5	&nbsp; &nbsp;&nbsp; &nbsp;<br/>
+| &nbsp; &nbsp;&nbsp; &nbsp;  | &nbsp; &nbsp;&nbsp; &nbsp;  | Dessert &nbsp; &nbsp;&nbsp; &nbsp; | 1 &nbsp; &nbsp;&nbsp; &nbsp;
 
 
  - The textfield to search for recipes is also tested for keywords, recipe names and ingredients, and redirects me  based on the desired search criteria 
