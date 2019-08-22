@@ -2,8 +2,8 @@
 
 ### Overview of the project
 
-- Kitchen Station share the highlights, discoveries and the recipes of the food you love to cook. With this easy-to-use recipe creation application, you can add / edit / delete /view your recipes, ideas and photos in minutes. 
-- Kitchen Station offers large database of recipes that are made by different cooking experts, chefs and simply housewives who loves to cook and like to experiment new dishes every day. The app offers best and large categories of recipes.
+- Kitchen Station shares the highlights, discoveries and the recipes of the food you love to cook. With this easy-to-use recipe creation application, you can add / edit / delete /view recipes, ideas and photos in minutes. 
+- Kitchen Station offers a large database of recipes that are made by different cooking experts, chefs and simply housewives who love to cook and like to experiment new dishes every day. The app offers the best and large categories of recipes.
 
 ![IMAGE](static/images/homepagesnapshot.jpg)
 
@@ -14,34 +14,38 @@
 - Create your own recipe and save it.
 - Create and save, edit and delete your cook book like normal physical diary.
 - Like and View the recipes of other cooks.
-- Large database of recipes of different cuisines and countries.
+- Large database of recipes from different cuisines and countries.
 - Searching and Filtering recipes based on different attributes such as cuisines, allergens, meals and searching based on any recipes, ingredients or keywords
 - Ordering recipes on reasonable aspects like “most liked” and “most popular” recipes
 - Social community to share recipes and inspire others.
-- Gain confidence in their cooking abilities
+- Gain confidence in your cooking abilities
 
 #### User Stories
 
 **"Kate loves cooking and wants to share her own personal recipes to the world"**
-- As a user, who wants to create an account Kate can register into the application by clicking the Register link on the navigation menu at the top, this will bring Kate a user entry form which when complete creates a new user account for Kate and presents additional features of the application
-- As a user,  Kate can login into the application by click the Login link on the navigation menu at the top ,fill up validate entries so that the it presents her my preferences.
+- As a user,  Kate can register into the application by clicking the **Register** link on the navigation menu at the top, this will bring Kate a user entry form which when complete creates a new user account for Kate and presents additional features of the application where she can now create her personal food diary
+- As a user,  Kate can login into the application by click the **Login link** on the navigation menu at the top ,fill up validate entries so that the it presents her the preferences.
 - As a user Kate can create her own recipes and add it and also manage her cooking diary.
 - As a user Kate can also View other chefs recipes and Like them
 
 **"Richard wants to prepare a nice meal for his wife and want to access the web application to check out some nice dinner ideas”**
-- As a user, Richard is provided with a search feature to search recipes on any field he would like ,this would also include any kind of ingredients he has in his kitchen.
+- As a user, Richard is provided with a search feature to search recipes by clicking the **Recipe** link on the navigation menu or the **View All recipes** button on the home page and searchh on any field he would like ,this would also include any kind of ingredients he has in his kitchen.
 - As a user , Richard is provided with drop down filters based on Cuisine, Allergen and Meal clicking any one drop down or a combination of filters would give Richard the best recipe he would want to make.
-- As a user, Richard can also type keywords in the text field this would include ingredient name, recipe name or any kind of keywords and would present Richard with a hug list of Recipes count of the recipes will be displayed on the top  which he could navigate through by clicking on the links provided at the bottom of the page.
+- As a user, Richard can also type keywords in the text field this would include ingredient name, recipe name or any kind of keywords and would present Richard with a huge list of Recipes, count of the recipes will be displayed on the top, he could navigate through the list by clicking on the page number links provided at the bottom of the page.
 - As a user ,Richard can also fasten his search by checking the Most popular Recipes or the Most viewed recipes button this would order recipes from the highest rating to the lowest rating.
 - Once Richard has decided on what he wants to cook ,he can click on the view recipe button to get details like ingredients and method to prepare the recipe.
 - Finally Richard can also give a vote if the recipe has been good enough to impress his wife.
 
-As a user who is browsing through the web application he/she can also click on images provided in the recipe card to see a zoomed in image of the recipe.
+**"As a first time user browsing the application"**
+- As a user who is browsing through the web application he/she can also click on images provided in the recipe card to see a zoomed in image of the recipe.
+- As a user , you can browse through the list of existing recipes by click the link **"RECIPES"** on the menu or the **"View All Recipes"** buuton on the home page.
+- Finally as a user, you can View the details of Recipe and Cast a vote if you like it.
+- As a user ,search facilties are also provided based on different user criterias in form of drop downs as well as typing in keywords
 
 #### Design Process
 
 [Schema diagram](https://www.dropbox.com/sh/mhe9ef9eevfb536/AAB9BvERCM2JlNUQuhLKDavta?dl=0)<br/>
-While working on the application new features and changes were implemented on the design of the wireframe<br/>
+While working on the application new features and changes were made on the design of the wireframe<br/>
 [Wireframes for Desktop](https://www.dropbox.com/sh/p5v46s3obnoddtc/AACUqugEnEjXy9dlTMVsDK7Fa?dl=0)<br/>
 [Wireframes for IPhone](https://www.dropbox.com/sh/zwvda3088wef633/AABq133OKwyu9Iegan9Etke6a?dl=0)<br/>
 [Wireframes for IPad](https://www.dropbox.com/sh/6nywq8sldsm1ewv/AAA903PRicdp6xeNwA5No1M0a?dl=0)<br/>
@@ -56,11 +60,12 @@ The following features are added to the application which is geared towards enha
 **Home**- serves as an initial landing page for all users. Users are able to access the following :
 - A static clickable navigation menu with items like Home, Recipes , Login, Register
 - Have a snick pick at the top 3 most popular recipes as card.
-- Clicking an image recipe in the card opens up the image to have a better view of the recipe
-- A view recipe button that will redirect you to more details for the recipe.
-- View all the recipes store in the database either by clicking the “Recipe” link on the menu or the “View all Recipes” button on the home page.
+- Clicking an image recipe in the card opens up the image to have a better look of the dish
+- A **View Recipe** button that will redirect you to the detailed recipe.
+- View all recipes store in the database either by clicking the **Recipe** link on the menu or the **View all Recipes** button on the home page.
 - Search provided at the footer of the page to Search recipes by food title, multiple ingredients or any other keywords.
 - A Carousal displaying 5 random images from different websites at a set interval.
+- If a valid user logs in displays a message "Welcome <username>"
 
 *Pages created:* base.html and index.html
 
@@ -68,22 +73,22 @@ The following features are added to the application which is geared towards enha
 - Upon clicking the register the user is provide an input form to enter details like username, password, country of origin and email address
 - The Register form provides validations for fields that are required and also checks it the username exists
 - Submitting the form creates an account for the user where the user is provide with a home page and clickable menu which now includes additional features Home, Recipes, Add Recipes ,My Recipes(Personal cookbook diary),Logout
-- The new user can also view all the recipes store in the database either by clicking the “Recipe” link on the menu or the “View all Recipes” button on the home page.
+- The new user can also view all the recipes store in the database either by clicking the **Recipe** link on the menu or the **View all Recipes** button on the home page.
 - Clicking on the Logout initiates a session time out and the user lands again on the home page with the additional features removed
 
 *Pages created:*–register.html
 
 **Login** – this creates an entry for returning users with existing accounts to manage their recipes
-- Provide a link to “ Sigin up “ if the user has not yet logged in
+- Provide a link to **Sigin up** if the user has not yet logged in
 - Clicking the login on the menu, directs the user to an input form to enter login details like username and password
 - The Login form provides validations for fields that are required and also checks if login is successful
 - Signing in the form creates opens the home page and clickable menu which now includes additional features Home, Recipes, Add Recipes ,My Recipes(Personal cookbook diary),Logout
-- The new user can also view all the recipes store in the database either by clicking the “Recipe” link on the menu or the “View all Recipes” button on the home page.
+- The new user can also view all the recipes store in the database either by clicking the **=Recipe** link on the menu or the **View all Recipes** button on the home page.
 - Clicking on the Logout initiates a session time out and the user lands again on the home page with the additional features removed
 
 *Pages created:*-login.html
 
-**Recipes**- this page displays a wide collection of recipes creates by different cooking experts, chefs, simply housewives and users.
+**Recipes**- this page displays a wide collection of recipes creates by different cooking experts, chefs, housewives and logged in users.
 
 The search section
 - Provides a clickable drill down for a filtered view based on the following criteria Cuisines ,Allergens and Meals
@@ -91,7 +96,7 @@ The search section
 - Ordering buttons are added to order recipes on the following aspects “Most popular” (upvotes) and “Most Viewed” (likes) recipes
 
 The recipe collection section
-- Displays Number of recipes on the current page from the total list of recipes ex “displaying 1 - 6 Recipes in total 8”
+- Displays Number of recipes on the current page from the total list of recipes ex **displaying 1 - 6 Recipes in total 8**
 - When this page is first time loaded a list of recipes are displayed in which the user can browse.
 - Pagination feature is incorporated so that users do not get lost and can concentrate on a particular amount of content, the page display 6 recipes at each time. The user can view the list of next 6 recipes by clicking on the pagination links provided at the bottom of the page.
 - Each recipe card has link to View recipe (details about the recipe), number of likes and number of views. This would also help users to browse a recipe that is most liked by people or have most views.
@@ -101,9 +106,9 @@ The recipe collection section
 
 **Searched Recipes** – this page displays list of recipes based on filtered criteria
 - Provides users with recipe cards of recipes based on search criteria
-“Results for: butter”
-- Displays Number of recipes on the current page from the total list of recipes ex “displaying 1 - 1 Recipes in total 1”
-- The user can also get to the recipe page by clicking a “Go Back to Recipe Page” button or the Recipes link in the menu.
+	**Results for: butter**
+- Displays Number of recipes on the current page from the total list of recipes ex **displaying 1 - 1 Recipes in total 1**
+- The user can also get back to the recipe page by clicking a **Go Back to Recipe Page** button or the **Recipes** link in the menu.
 - Pagination feature is incorporated so that users do not get lost and can concentrate on a particular amount of content, the page display 6 recipes at each time. 
 - The user can view the list of next 6 recipes by clicking on the pagination links provided at the bottom of the page.
 
@@ -124,7 +129,7 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 - Attributes like Prep time and Cooking time opens up a time picker that allows the user to select the time from a clock.
 - Attributes like Cuisine ,allergens and meal type are provided to the user as a drop down and a Multiselect dropdown. The values are fetched from the databases.
 - Placeholders are provided with instructions for ingredients and method so that the user is aware of how they can write the fields.
-- Submitting the recipes added the recipe to the collection of recipes and also to the users account “My Recipes” which provides a kind of a personal cookbook diary for the user with features like Edit and Delete.
+- Submitting the recipes added the recipe to the collection of recipes and also to the users account **My Recipes** which provides a kind of a personal cookbook diary for the user with features like Edit and Delete.
 
 *Pages created:*-addrecipe.html
 
@@ -132,6 +137,9 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 - Displays recipe cards for all recipes created by that user.
 - Provides view ,edit, delete features to every recipe card.
 - Also display pagination info and links on top and bottom of the page respectively to improve the readability score of the content.
+- Clicking the **View** button presents a detailed view of the recipe
+- Clicking the **Edit** button present a editable form so changes can be made to an users existing recipe
+- Clicking the **Delete** button pops up a confirmation to the user asking if he/she is sure of deleting the recipe
 
 *Pages created:*-userrecipes.html
 
@@ -143,13 +151,13 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 
 
 **Delete Recipe**- removes the recipe from the user’s collection of recipes as well as the recipe database
--Provides a Delete button to delete the recipe from the database
+- Provides a Delete button to delete the recipe from the database
 
 **View Recipe**-
-- individual recipe page  accessed through clicking the view recipe button. 
+- individual recipe page  accessed through clicking the **View recipe** button. 
 - It uses an entire page to display a full recipe with larger text and the recipe image at its full capacity to the user. 
 - Upon viewing it increments the recipe view count. Any user can also give a vote on the recipe by clicking the thumbs-up icon.
-- If as valid user has login he/she will not be able to Like his/her own recipe but if provided a feature of liking other registered users recipes.
+- If a valid user has logged in he/she will not be able to Like his/her own recipe but if provided a feature of liking other users recipes.
 
 *Page created:* viewrecipe.html
 
@@ -160,7 +168,7 @@ RecipeName, ShortDescription, Cusine, Allergens, Meal, Serves, Preptime, Cooking
 
 ![IMAGE](static/images/dynamicadder.jpg)
 
-- Responsive Charts - Use the dc.js library I may add  where on clicking each bar it would drill down into other bar chart results to compare data.
+- Responsive Charts - Use the dc.js library where on clicking each bar it would drill down into other bar chart results to compare data.
 
 ## Technologies Used
 **Python 3**
@@ -226,13 +234,12 @@ Schema: https://www.draw.io/<br/>
 - The home page is responsive and conforms to the browser size. 
 - The navigation bar collapses to a burger icon when viewed on medium and small devices. On hovering on each of the link the color it highlights the active link, however Home link is active by default
 - Tested every link on the navigation bar and verified that I was directed to the appropriate sections.
-- Tested that clicking on the recipe image pops up the image to a bigger view.
+- Tested that clicking on the recipe image pops up the image to a larger view.
 
 **Footer- Social media **
 - Social media links - Clicked the social media icons i.e. github and confirmed it directs you to the desired site.
 - On small devices the social media and copyright are centered on the webpage.
 - Confirmed the search field works efficiently for any search criteria submitted.
-
 
 **Recipes link(recipes.html)** –*"Test PASS"*
 - Clicking the “Recipes” link takes me to a new webpage. 
@@ -241,8 +248,8 @@ Schema: https://www.draw.io/<br/>
 Test cases Example have been checked for each of the drop down,
 
 
-| Cuisine        | Allergen                  | Meal Type           |   Records Fetched
-| ------------- | ----------------------- | ----------------------- |
+| Cuisine        | Allergen                  | Meal Type           |   Records Fetched<br/>
+| ------------- | ----------------------- | ----------------------- |<br/>
 | Chinese      | None |  Lunch |    1
 | Chinese     |  | Snack |  1
 |       | Milk  | Lunch |   1
