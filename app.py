@@ -142,29 +142,24 @@ def search_recipes():
         
         query = {}
         if cuisine and allergen and meal:
-            filter_recipes = mongo.db.recipes.find({"cuisine_name":cuisine,
-                                                    "allergen_name":allergen,
-                                                    "meal_type":meal})
+            filter_recipes = mongo.db.recipes.find({"cuisine_name":cuisine, "allergen_name":allergen, "meal_type":meal})
             query = {cuisine,allergen,meal}
         
         elif cuisine and allergen:
-            filter_recipes = mongo.db.recipes.find({"cuisine_name":cuisine,
-                                                    "allergen_name":allergen})
+            filter_recipes = mongo.db.recipes.find({"cuisine_name":cuisine, "allergen_name":allergen})
             query = {cuisine,allergen}
 
         elif cuisine and meal:
-            filter_recipes = mongo.db.recipes.find({"cuisine_name":cuisine,
-                                                    "meal_type":meal})
+            filter_recipes = mongo.db.recipes.find({"cuisine_name":cuisine, "meal_type":meal})
             query = {cuisine,meal}
 
         elif allergen and meal:
-            filter_recipes = mongo.db.recipes.find({"allergen_name":allergen,
-                                                    "meal_type":meal})
+            filter_recipes = mongo.db.recipes.find({"allergen_name":allergen, "meal_type":meal})
             query = {allergen,meal}
 
         elif cuisine:
             filter_recipes=mongo.db.recipes.find({"cuisine_name":cuisine})
-            query={cuisine}
+            query = {cuisine}
 
         elif allergen:
             filter_recipes = mongo.db.recipes.find({"allergen_name":allergen})
@@ -196,8 +191,6 @@ def search_recipes():
                                     page = page,
                                     per_page = per_page,
                                     pagination = pagination)
-
-
         
     
         page, per_page, offset = get_page_args(page_parameter = 'page',
@@ -208,13 +201,19 @@ def search_recipes():
                                 per_page = ITEMS_PER_PAGE,
                                 total = total_filter_recipes,
                                 record_name = 'Recipes')
+  
         return render_template('search.html',
-                                recipe = recipes_fetched,
+                                recipes = recipes_fetched,
                                 page = page,
                                 query = query,
                                 per_page = per_page,
                                 pagination = pagination)  
                               
+
+                              
+
+                                    
+                          
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
     """View a single detailed recipe"""

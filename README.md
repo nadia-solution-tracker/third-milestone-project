@@ -304,7 +304,11 @@ also included the proper email format (xxx@xx.xxx) on testing.
 - Tested the "like" button by clicking the thumbs up increments the total number of likes on that particular recipe
 - Tested that when a user logins in he/she is not able to like his/her own recipe.However user is given the option to like other registered user recipes
 
+Incoperated 404 Error handling in Flask.A 404 Error is showed whenever a page is not found.
+
 The **app.py** code has been tested for PEP8 requirements/Python code requirments <link>(http://pep8online.com/)
+
+
 
 **Testing of mongodb atlas changes**
 When a user...
@@ -398,6 +402,7 @@ Code Logic
 -	For display Flash messages - https://pythonise.com/feed/flask/flask-message-flashing
 -	To-output-a-comma-delimited-list-in-jinja-python-template: 
 https://stackoverflow.com/questions/11974318/how-to-output-a-comma-delimited-list-in-jinja-python-template
+-  404 Error Handling- https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
 
 Images and Recipes
 -	All images and recipes are taken from https://www.bbcgoodfood.com/

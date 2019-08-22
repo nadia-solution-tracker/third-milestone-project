@@ -204,7 +204,10 @@ footer{
         height:200px;
         padding-top:15px;
     }
-    
+    .carousel .carousel-item>img{
+        width:600px;
+        height:400px;
+    }
     .mainforminput::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
         font-family: 'Mountains of Christmas', cursive;
         opacity: 1; /* Firefox */
@@ -214,6 +217,8 @@ footer{
     display: inline-block;
     text-align: center;
     }
+    
+   
 }
 
 /*On screens that are 1250px or less*/
@@ -228,8 +233,13 @@ footer{
     }
     
     div.card{
-    min-height:500px;
+        min-height:550px;
     }
+    .carousel .carousel-item>img{
+        width:600px;
+        height:400px;
+    }
+  
 }
 
 
