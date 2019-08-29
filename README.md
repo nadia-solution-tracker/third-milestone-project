@@ -259,6 +259,7 @@ Test cases Example have been checked for each of the drop down,
 - Tested the link to open Login page
 - Verified error message on the form when the mandatory fields were left blank. 
 - Verified for invalid user name and password
+- Login page tested for username:peter and password:peter
 - 
 ![IMAGE](static/images/login.jpg)
 
@@ -402,6 +403,7 @@ Code Logic
 -	To-output-a-comma-delimited-list-in-jinja-python-template: 
 https://stackoverflow.com/questions/11974318/how-to-output-a-comma-delimited-list-in-jinja-python-template
 -  404 Error Handling- https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
+-  materializecss-select-double-click-to-toggle- https://stackoverflow.com/questions/55937951/materializecss-select-double-click-to-toggle
 
 Images and Recipes
 -	All images and recipes are taken from https://www.bbcgoodfood.com/ and Google Images

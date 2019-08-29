@@ -22,15 +22,15 @@
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
                                         <input type="password" class="form-control mainforminput" name="pass" placeholder="Password" required="required"><br/>
-                                        {% with messages = get_flashed_messages(with_categories=true) %}
-                                            {% if messages %}
-                                                {% for category, message in messages %}
-                                                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                                                        <span>{{ message }}</span>
-                                                    </div>
-                                                {% endfor %}
-                                            {% endif %}
-                                        {% endwith %}
+                                            {% with messages = get_flashed_messages(with_categories=true) %}
+                                                {% if messages %}
+                                                    {% for category, message in messages %}
+                                                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                                            <span>{{ message }}</span>
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endwith %}
                                     </div>
                                 </div>
                                

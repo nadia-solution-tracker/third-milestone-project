@@ -3,84 +3,79 @@
 <!--Header Image-->
   <header id="heading"></header>
   <br/>
-<div class="card">
-                         <div class="card-header"><h4 class="text-center">SEARCH A RECIPE</h4></div>
-                        <div class="card-body">
- <form class="form" action="{{url_for('search_recipes')}}"  method="POST">
-    <div class="container">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">map</i>
-            <select id="cuisine_name_filter" name="cuisine_name_filter">
-              <option value="" disabled selected>Select Cuisine</option>
-              {% for cuisine in cuisines %}
-                <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
-              {% endfor %}
-            </select>
+  <div class="card">
+  <div class="card-header"><h4 class="text-center">RECIPE BASIC FILTERING</h4></div>
+    <div class="card-body">
+      <form class="form" action="{{url_for('search_recipes')}}"  method="POST">
+        <div class="container">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">map</i>
+              <select id="cuisine_name_filter" name="cuisine_name_filter">
+                <option value="" disabled selected>Filter Cuisine Type</option>
+                {% for cuisine in cuisines %}
+                  <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+        
+            <div class="input-field col s12">
+              <i class="material-icons prefix">priority_high</i>
+              <select id="allergen_name_filter" name="allergen_name_filter">
+                <option value="" disabled selected>Filter by Allergens</option>
+                {% for allergy in allergens %}
+                  <option value="{{allergy.allergen_name}}">{{allergy.allergen_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+        
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <select id="meal_type_filter" name="meal_type_filter">
+                <option value="" disabled selected>Filter by Meal Type</option>
+                {% for meal in meals %}
+                <option value="{{meal.meal_type}}">{{meal.meal_type}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <button id="filter_submit_btn" class=" btn btn-info btn-xs"  type="submit">Filter Recipes
+                <i class="material-icons right">search</i>
+              </button>
+              <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light grey btn ">
+	              Reset
+	              <i class="material-icons right">clear</i>
+	            </a>
+          </div>
         </div>
         
-        <div class="input-field col s12">
-          <i class="material-icons prefix">priority_high</i>
-          <select id="allergen_name_filter" name="allergen_name_filter">
-            <option value="" disabled selected>Select Allergens</option>
-            {% for allergy in allergens %}
-              <option value="{{allergy.allergen_name}}">{{allergy.allergen_name}}</option>
-            {% endfor %}
-          </select>
-          
+        <div class="row">
+          <i class="material-icons">search</i> 
+          <input class="form-control form-control-sm ml-3 w-75" type="text" id="search_item"  name="search_item"  placeholder="Search Recipes,Ingredients or Keywords and Press Enter" aria-label="Search">
         </div>
-        
-        
-        <div class="input-field col s12">
-          <i class="material-icons prefix">local_dining</i>
-          <select id="meal_type_filter" name="meal_type_filter">
-            <option value="" disabled selected>Select Meal Type</option>
-            {% for meal in meals %}
-              <option value="{{meal.meal_type}}">{{meal.meal_type}}</option>
-            {% endfor %}
-          </select>
-          
-        </div>
-        
       
-       
-        
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12 text-center">
-            <button id="filter_submit_btn" class=" btn btn-info btn-xs"  type="submit">Filter Recipes
-            <i class="material-icons right">search</i>
-            </button>
-            <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light grey btn ">
-	            Reset
-	            <i class="material-icons right">clear</i>
-	        </a>
-
+        <h3 class="content">SORTING CRITERIA</h3><br/>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <a class="btn btn-info btn-xs" href="{{url_for('most_popular_recipes')}}">Most Popular Recipes  <i class="material-icons">thumb_up</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info btn-xs" href="{{url_for('most_viewed_recipes')}}">Most Viewed Recipes<i class="material-icons">remove_red_eye</i></a>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <i class="material-icons">search</i> 
-        <input class="form-control form-control-sm ml-3 w-75" type="text" id="search_item"  name="search_item"  placeholder="Search Recipes,Ingredients or Keywords" aria-label="Search">
-      </div>
-      
-      
-      <div class="row">
-          <a class="waves-effect waves-light btn" href="{{url_for('most_popular_recipes')}}">Sort by most popular  <i class="material-icons">thumb_up</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="waves-effect waves-light btn" href="{{url_for('most_viewed_recipes')}}">Most Viewed <i class="material-icons">remove_red_eye</i></a>
-      </div>
-    </div>
-  </form>
-    </div>
+    </form>
+  </div>
   </div>
   
       
     <h3 class="content"> OUR  {{filter_text}} RECIPES  </h3>
 
     <div class="pagination row justify-content-center">
-    {{ pagination.info }}
-  </div>
-  <div class="row">
+      {{ pagination.info }}
+    </div>
+    <div class="row">
       {% for recipe in recipes %}
         <div class="col-md-6 col-lg-4">
           <div class="card"><img src="{{recipe.image_link}}" class="image_style materialboxed">
@@ -96,10 +91,10 @@
           </div>
         </div>
       {% endfor %}
-  </div>
+    </div>
   
-  <div class="pagination row">
-    {{ pagination.links }}
-  </div>
+    <div class="pagination row">
+      {{ pagination.links }}
+    </div>
 {% endblock %}
  

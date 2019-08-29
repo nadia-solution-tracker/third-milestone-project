@@ -29,14 +29,16 @@
                                     </div>
                                 </div>
                                 
-                                <!--Authors Country of Origin-->
+                                
                                 <div class="row">
+                                    <!--Authors Country of Origin-->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">short_text</i>
                                         {% for user in users %}{% if user.user_name == username %}
                                             <input class="mainforminput" id="country_of_origin" name="country_of_origin" type="text" value="{{user.country_of_origin}}" disabled>
                                         {% endif %}{% endfor %}
                                     </div>
+                                    <!--Meal Type-->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">local_dining</i>
                                         <select multiple id="meal_type" name="meal_type" aria-required="true">
@@ -49,9 +51,8 @@
                                     </div>
                                 </div>
                                 
-                                <!--Cuisines-->
-                                
                                 <div class="row">
+                                    <!--Cuisines-->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">map</i>
                                         <select id="cuisine_name" name="cuisine_name" aria-required="true">
@@ -62,6 +63,7 @@
                                         </select>
                                         <label for="cuisine_name">Cuisine</label>
                                     </div>
+                                    
                                    <!--Allergens-->
                                    <div class="input-field col s12">
                                         <i class="material-icons prefix">priority_high</i>
@@ -91,7 +93,7 @@
                                     </div>
                                 </div>
                                 
-                                 <!--Serves-->
+                                <!--Serves-->
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">local_dining</i>
@@ -100,7 +102,7 @@
                                     </div>
                                 </div>
                                 
-                                 <!--Image Link-->
+                                <!--Image Link-->
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">insert_link</i>
@@ -130,7 +132,7 @@
                                 
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-info"  onclick="{{ url_for( 'insert_recipe')}}">
+                                        <button type="submit" class="btn btn-info"  onclick="{{ url_for('insert_recipe')}}">
                                             Add Recipe <i class="material-icons">create</i>
                                         </button>
                                     </div>

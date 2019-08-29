@@ -30,12 +30,14 @@
                                 </div>
                                 
                                 <div class="row">
+                                    <!--Authors Country of Origin-->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">short_text</i>
                                         {% for user in users %}{% if user.user_name == username %}
                                             <input class="mainforminput" id="country_of_origin" name="country_of_origin" type="text" value="{{user.country_of_origin}}" disabled>
                                         {% endif %}{% endfor %}
                                     </div>
+                                    <!--Meal Type-->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">priority_high</i>
                                         <select multiple id="meal_type" name="meal_type" required="" aria-required="true">
@@ -51,9 +53,8 @@
                                     </div>
                                 </div>
                                 
-                                <!--Cuisines-->
-                                
                                 <div class="row">
+                                    <!--Cuisines-->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">map</i>
                                         <select id="cuisine_name" name="cuisine_name" required="" aria-required="true">
@@ -96,9 +97,8 @@
                                     </div>
                                 </div>
                                 
-                              
                                 <div class="row">
-                                     <!--Preparation Time-->
+                                    <!--Preparation Time-->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">schedule</i>
                                         <input id="prep_time" name="prep_time" type="text" class="validate timepicker mainforminput" value="{{recipe.prep_time}}" placeholder="Preparation Time">
@@ -110,10 +110,9 @@
                                         <input id="cooking_time" name="cooking_time" type="text" class="validate timepicker mainforminput" value="{{recipe.cooking_time}}" placeholder="Cooking Time">
                                         <label for="cooking_time">Cooking Time</label>
                                     </div>
-                                    
                                 </div>
                                 
-                                 <!--Serves-->
+                                <!--Serves-->
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">local_dining</i>
@@ -122,7 +121,7 @@
                                     </div>
                                 </div>
                                 
-                                 <!--Image Link-->
+                                <!--Image Link-->
                                 <div class="row">
                                     <div class="input-field col s12">
                                       <i class="material-icons prefix">insert_link</i>
@@ -139,7 +138,6 @@
                                       <label for="icon_prefix">Ingredients</label>
                                     </div>
                                 </div>
-                                
                                 
                                 <!--Method-->
                                 <div class="row">
@@ -164,11 +162,11 @@
                                 </div>
                             </form>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 <br/>
 {% endblock %}
 
