@@ -236,7 +236,7 @@ Schema: https://www.draw.io/<br/>
 - Tested every link on the navigation bar and verified that I was directed to the appropriate sections.
 - Tested that clicking on the recipe image pops up the image to a larger view.
 
-**Footer- Social media **
+**Footer- Social media**
 - Social media links - Clicked the social media icons i.e. github and confirmed it directs you to the desired site.
 - On small devices the social media and copyright are centered on the webpage.
 - Confirmed the search field works efficiently for any search criteria submitted.
@@ -260,7 +260,8 @@ Test cases Example have been checked for each of the drop down,
 - Verified error message on the form when the mandatory fields were left blank. 
 - Verified for invalid user name and password
 - Login page tested for username:peter and password:peter
-- 
+
+
 ![IMAGE](static/images/login.jpg)
 
 ![IMAGE](static/images/successfullogin.jpg)

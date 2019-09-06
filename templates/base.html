@@ -95,6 +95,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('select').material_select();
+        //https://stackoverflow.com/questions/55937951/materializecss-select-double-click-to-toggle
         document.querySelectorAll('.select-wrapper').forEach(t => t.addEventListener('click', e=>e.stopPropagation()))
         $("select[required]").css({
             display: 'inline',
