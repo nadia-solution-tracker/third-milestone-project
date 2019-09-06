@@ -190,9 +190,12 @@ footer{
         min-height:580px;
     }
     
-    #footer-details h6,
+    #footer-details h6{
+        text-align:center;
+    }
     #footer-details a i{
-        text-align: center;
+       
+        padding-left: 135px;
     }
     
     #footer-details form input::-webkit-input-placeholder {
